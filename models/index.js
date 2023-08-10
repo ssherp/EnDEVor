@@ -1,6 +1,6 @@
 const User = require('./User');
-const Product = require('./Product');
-const Client = require('./Client');
+const Service = require('./Service');
+const Quote_Item = require('./Quote_Item');
 const Quote = require('./Quote');
 
 
@@ -8,29 +8,29 @@ const Quote = require('./Quote');
 
 // no many to many: all one to many relationships
 //user
-//users have many products
+//users have many Services
 //users have many quotes
-//users have many clients
+//users have many Quote_Item
 
 
 //client
 //client belong to one user
 //client has many quotes
-//client has many product
+//client has many Service
 //will have foreign key that points to the user
 
 
-//product 
-//products belongs to one user
-//product have many clients
-//product has many quotes
+//Service 
+//Services belongs to one user
+//Service have many Quote_Item
+//Service has many quotes
 //will have foreign key for user
 //will have foreign key for client
 
 //quote 
 //quote belongs to one user
-//quote have many clients
-//quote has many product
+//quote have many Quote_Item
+//quote has many Service
 //will have foreign key for user
 //will have foreign key for client
 
@@ -40,4 +40,4 @@ const Quote = require('./Quote');
 
 
 
-module.exports = { User, Product, Client, Quote };
+module.exports = { User, Service, Quote, Quote_Item };

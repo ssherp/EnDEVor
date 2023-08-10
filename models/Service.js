@@ -1,14 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Client extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Service extends Model {}
 
-Client.init(
+Service.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -20,27 +15,28 @@ Client.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
+    description: {
+      type: DataTypes.TEXT,
+    },   
+    price : {
+      type: DataTypes.FLOAT,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
       },
     },
-    company_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
   },
-
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Client',
+    modelName: 'Service',
   }
+);
 
-
-  );
+module.exports = Service;
