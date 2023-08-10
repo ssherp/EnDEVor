@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS link_db;
+
+CREATE DATABASE link_db;
