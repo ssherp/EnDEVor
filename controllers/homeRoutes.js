@@ -1,14 +1,16 @@
-const router = require('express').Router()
-const { } = require('../models')
-
-router.get('/', async (req, rse) => {
-	try {
-
-	} catch {
-		res.status(500).json(err);
-	}
+login/signin
+const router = require('express').Router();
+const { Service, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 
-})
-
-module.exports = router;
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/homepage');
+      return;
+    }
+  
+    res.render('login');
+  });
+  
+  module.exports = router
