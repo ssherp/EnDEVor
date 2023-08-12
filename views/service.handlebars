@@ -1,0 +1,12 @@
+<!--iterate through all services and create, trying out partials -Aaron-->
+<div class="container">
+	<section id="services-list" class="row col-5 align-self-start">
+		<header>Services</header>
+		<div class="service-card">
+			<p>
+				{{#each services as |service|}}alignment
+				{{> services-details}}  <!--check partials-->
+				{{/each}}
+			</p>
+		</div>
+	</section>
