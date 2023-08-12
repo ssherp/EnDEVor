@@ -30,13 +30,12 @@ Quote_Item.init(
       },
     },
   },
-
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Quote_Item',
+    modelName: 'quote_item',
   }
 
   );
