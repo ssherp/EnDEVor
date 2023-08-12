@@ -28,15 +28,15 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       const quoteData = await quote.findByPk(req.params.id, {
-        include: [{ model: Quote, through: Trip, as: 'location_travellers' }]
+        include: [{ model: , through: , as: '' }]
       });
   
       if (!quoteData) {
-        res.status(404).json({ message: 'No location found with this id!' });
+        res.status(404).json({ message: 'No quote found with this id!' });
         return;
       }
   
-      res.status(200).json(locationData);
+      res.status(200).json(quoteData);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -45,14 +45,14 @@ router.get('/:id', async (req, res) => {
 // DELETE a quote
 router.delete('/:id', async (req, res) => {
     try {
-      const tripData = await Trip.destroy({
+      const quoteData = await Quote.destroy({
         where: { id: req.params.id }
       });
-      if (!tripData) {
-        res.status(404).json({ message: 'No trip with this id!' });
+      if (!quotepData) {
+        res.status(404).json({ message: 'No quote with this id!' });
         return;
       }
-      res.status(200).json(tripData);
+      res.status(200).json(quoteData);
     } catch (err) {
       res.status(500).json(err);
     }
