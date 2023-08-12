@@ -1,13 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const clientRoutes = require('./clientRoutes');
-const productRoutes = require('./serviceRoutes');
+const serviceRoutes = require('./serviceRoutes');
+const quoteRoutes= require ('./quoteRoutes')
 const quoteRoutes= require ('./quoteRoutes')
 
 router.use('/user', userRoutes);
-router.use('/clients', clientRoutes);
-router.use('/products',productRoutes);
-router.use('/quoteItem',quoteItemRoutes);
+router.use('/services',serviceRoutes);
+router.use('/quoteItem',quoteRoutes);
 router.use('/quotes',quoteRoutes);
 
 
