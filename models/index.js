@@ -12,14 +12,6 @@ const Quote = require('./Quote');
 //users have many quotes
 //users have many Quote_Item
 
-
-//client
-//client belong to one user
-//client has many quotes
-//client has many Service
-//will have foreign key that points to the user
-
-
 //Service 
 //Services belongs to one user
 //Service have many Quote_Item
@@ -27,17 +19,31 @@ const Quote = require('./Quote');
 //will have foreign key for user
 //will have foreign key for client
 
+//quote_item
+//quote_item belongs to service
+//quote_item belongs to quote
+//will have foreign key for service
+//will have foreign key for quote
+Quote_Item.belongsTo(Service, {
+    foreignKey: "service_id"
+});
+
+Quote_Item.belongsTo(Quote, {
+    foreignKey: "quote_id"
+});
+
 //quote 
-//quote belongs to one user
+//quote belongs to user
 //quote have many Quote_Item
 //quote has many Service
 //will have foreign key for user
-//will have foreign key for client
+Quote.hasMany(Quote_Item, {
+    foreignKey: 'quote_item_id',
+    onDelete: 'CASCADE'
+})
 
-
-
-
-
-
+Quote.belongsTo(User, {
+    foreignKey: 'user_id'
+})
 
 module.exports = { User, Service, Quote, Quote_Item };
