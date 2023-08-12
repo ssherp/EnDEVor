@@ -7,6 +7,7 @@ const quoteRoutes= require ('./quoteRoutes')
 router.use('/user', userRoutes);
 router.use('/clients', clientRoutes);
 router.use('/products',productRoutes);
+router.use('/quoteItem',quoteItemRoutes);
 router.use('/quotes',quoteRoutes);
 
 
