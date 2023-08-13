@@ -24,23 +24,23 @@ router.get('/', async (req, res) => {
     }
   });
 
-// GET a quote
-router.get('/:id', async (req, res) => {
-    try {
-      const quoteData = await quote.findByPk(req.params.id, {
-        include: [{ model: , through: , as: '' }]
-      });
+// // GET a quote
+// router.get('/:id', async (req, res) => {
+//     try {
+//       const quoteData = await quote.findByPk(req.params.id, {
+//         include: [{ model: , through: , as: '' }]
+//       });
   
-      if (!quoteData) {
-        res.status(404).json({ message: 'No quote found with this id!' });
-        return;
-      }
+//       if (!quoteData) {
+//         res.status(404).json({ message: 'No quote found with this id!' });
+//         return;
+//       }
   
-      res.status(200).json(quoteData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//       res.status(200).json(quoteData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 // DELETE a quote
 router.delete('/:id', async (req, res) => {
