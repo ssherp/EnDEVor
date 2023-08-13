@@ -1,0 +1,57 @@
+<div class="card col-6 d-flex">
+  <div class="card-header">
+    Log In
+  </div>
+
+  <div class="card ">
+
+    <div class="card-body">
+
+      <form id="login-form">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="input" class="form-control" id="password">
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary" type="button">Log In</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="card-header">
+    Sign Up
+  </div>
+
+  <div class="card">
+
+    <div class="card-body">
+      <form id="signup-form">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="new-username" aria-describedby="emailHelp">
+          <div class="form-text">It should be an unique username</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="input" class="form-control" id="new-password">
+          <div class="form-text">It should be more than 8 characters</div>
+        </div>
+
+        <button id="submit-btn" type="submit" class="btn btn-primary">Sign Up</button>
+
+      </form>
+      <a href="/login">Log in instead</a>
+    </div>
+
+  </div>
+
+</div>
+<script src="./js/login.js"></script>
