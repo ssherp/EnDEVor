@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const quoteId = req.params.id;
-        const quoteData = await quote.findByPk(quoteId);
+        const quoteData = await quoteId.findByPk(quoteId);
 
         if (!quoteData) {
             res.status(404).json({ message: 'Quote not found!' });
