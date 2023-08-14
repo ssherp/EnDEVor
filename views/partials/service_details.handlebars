@@ -1,8 +1,11 @@
-<div class="card" id="add-service">
-  <a href="services/user/{{id}}"> 
-    <header>{{name}}</header>
-	 	 <h2>{{price}}</h2>
-		 <p>{{description}}</p>
+<div class="card" id="serviceCard">
+  <a href="services/{{id}}"> 
+    <header id="serviceName" class="text-danger">{{name}}</header>
+	 	 <h2 id="servicePrice" class="text-white"><strong>{{price}}</strong></h2>
+		 <p id="serviceDescription" class="text-warning">{{description}}</p>
   </a>
 </div>
 <!--Wherever we hold the services data will be the path... I'm assuming there is a database for services because services are dependent on user-->
+
+{{!-- may change color of text in future --}}
+

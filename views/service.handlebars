@@ -2,6 +2,7 @@
 <div class="container">
 	<section id="services-list" class="row col-5 align-self-start">
 		<header>Services</header>
+		<!--Consider turning div into clickable button to add service as a quote-item-->
 		<div class="service-card">
 			<p>
 				{{#each services as |service|}}alignment
@@ -9,21 +10,22 @@
 				{{/each}}
 			</p>
 		</div>
+		<button id="addButton">Add</button>
 	</section>
 	<!--Edit Form-->	
 	<section id="edit" class="row col-5 align-items-end">
 		<header>Edit</header>
 		<div class="edit-container">
 			<form id="edit-form">
-				<label for="edit-name">Name: </label>
+				<label for="edit-name" class="text-warning">Name: </label>
 				<input type="text" id="edit-name" name="edit-name">
-				<label for="edit-description">Includes: </label>
+				<label for="edit-description" class="text-warning">Includes: </label>
 				<input type="text" id="edit-description" name="edit-name"><br><br>
-				<label for="edit-price">Price: </label>
+				<label for="edit-price" class="text-warning">Price: </label>
 				<input type="text" id="edit-price" name="edit-price">
 			<!--Buttons below, will need to get value of input for name, description, price-->
-				<button></button>
-				<button></button>
+				<button id="servicesSaveBtn">Save</button>
+				<button id="servicesDelBtn">Delete</button>
 			</form>
 		</div>
 	</section>

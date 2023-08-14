@@ -105,21 +105,21 @@ _Currently a student in the UC Berkeley Full Stack Coding Bootcamp. Contact Belo
 ![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
 <br>
 
-[email](email)
+[gmail](aaronlamfinance@gmail.com)
 <br>
 <br>
 
 ![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
 <br>
 
-[https://www.linkedin.com/in/](https://www.linkedin.com/in/)
+[https://www.linkedin.com/in/lam-aaron2](https://www.linkedin.com/in/lam-aaron2)
 <br>
 <br>
 
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 <br>
 
-[https://github.com/](https://github.com/)
+[https://github.com/alam2tg](https://github.com/alam2tg)
 
 <br>
 
