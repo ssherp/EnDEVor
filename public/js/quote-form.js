@@ -49,13 +49,3 @@ doc.moveDown(3);
 doc.end();
 }
 
-
-
-//=======================================================//
-
-const fs = require('fs');
-
-fs.writeFile($(project.title)`.pdf`, quoteData, function (err) {
-    if (err) throw err;
-    console.log('PDF created');
-});
