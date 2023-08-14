@@ -88,7 +88,7 @@
 
 ## Deployment
 
-Website URL: [enDEVors](https://laineycreighton.github.io/landing-page/)
+Website URL: [enDEVors](site link)
 
 ![alt text](./assets/images/)
 
