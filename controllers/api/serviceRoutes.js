@@ -64,7 +64,22 @@ router.put('/:id', async (req,res) => {
 	}
 }); 
 
-
+//delete method but id, services id placeholder for future services database pathway
+router.delete('./services/:id', async (req,res) => {
+	try {
+		const servicesData = await Service.destroy({
+			where: {
+				id: req.params.id,
+			}})
+			if (!serviceData) {
+				res.status(404).json({ message: 'No service found with this ID' });
+				return;
+			}
+			res.status(200).json(servicesData);
+		} catch {
+			res.status(400).json(err);
+		}
+});
 
 
 module.exports = router;
