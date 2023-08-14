@@ -27,9 +27,11 @@ const loginFormHandler = async (event) => {
   
     const username = document.querySelector('#new-username').value.trim();
     const password = document.querySelector('#new-password').value.trim();
+    const email = document.querySelector('#new-email').value.trim();
+    const firstName = document.querySelector('#new-firstName').value.trim();
+    const lastName = document.querySelector('#new-lastName').value.trim();
   
-  
-    if (username && password) {
+    if (firstName && lastName && username && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
@@ -37,7 +39,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/homepage');
       } else {
         alert(response.statusText);
       }
