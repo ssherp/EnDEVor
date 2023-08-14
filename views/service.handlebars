@@ -1,17 +1,21 @@
 <!--iterate through all services and create, trying out partials -Aaron-->
 <div class="container">
-	<section id="services-list" class="row col-5 align-self-start">
-		<header>Services</header>
-		<div class="service-card">
-			<p>
-				{{#each services as |service|}}alignment
-				{{> services-details}} <!--check partials-->
-				{{/each}}
-			</p>
-		</div>
+	<section id="services-list" class="row col-6 align-self-start">
+		<form>
+			<header class="text-center">Services</header>
+			<!--Consider turning div into clickable button to add service as a quote-item-->
+			<div class="service-card">
+				<p>
+					{{#each services as |service|}}alignment
+					{{> services-details}} <!--check partials-->
+					{{/each}}
+				</p>
+			</div>
+			<button id="serviceAddBtn">Add</button>
+		</form>
 	</section>
 	<!--Edit Section-->
-	<section id="edit" class="row col-5 align-items-end">
+	<section id="edit-service" class="row col-6 align-items-end">
 		<!--Edit -->
 		<header>Edit</header>
 		<!--Edit Form-->
@@ -19,17 +23,18 @@
 			<form id="edit-form">
 				<!--Service Name Input-->
 				<label for="edit-name">Name: </label>
-				<input type="text" id="edit-name" name="edit-name">
+				<textarea type="text" id="edit-name" name="edit-name"></textarea>
 				<!--Service Description Input-->
 				<label for="edit-description">Includes: </label>
-				<input type="text" id="edit-description" name="edit-name"><br><br>
+				<textarea type="text" id="edit-description" name="edit-name"><br><br></textarea>
 				<!--Service Price Input-->
 				<label for="edit-price">Price: </label>
-				<input type="text" id="edit-price" name="edit-price">
+				<textarea type="text" id="edit-price" name="edit-price"></textarea>
 				<!--Buttons below, will need to get value of input for name, description, price-->
-				<button></button>
-				<button></button>
+				<button id="save-button" class="text-danger">Save</button>
+				<button id="delete-button" class="text-danger">Delete</button>
 			</form>
 		</div>
 	</section>
 </div>
+<script src="/public/js/services.js"></script>
