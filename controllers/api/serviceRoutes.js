@@ -7,8 +7,8 @@ router.post('/', async (req,res) => {
 	try {
 		const serviceData = await Service.create({
 			service_name: req.body.name,
-			service_description: req.body.description,
-			service_price: req.body.price
+			description: req.body.description,
+			price: req.body.price
 		});
 		res.status(200).json(serviceData)
 	} catch {
@@ -37,10 +37,10 @@ const servicesData = await Service.findAll({
 */
 
 //GET single service
-router.get('./services/:id', async (req, res) => {
+router.get('./:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
-		if (!quoteData) {
+		if (!servicesData) {
 			res.status(404).json({ message: 'No service found with this ID' });
 			return;
 		}
@@ -55,9 +55,9 @@ router.put('/:id', async (req,res) => {
 	try {
 		const serviceUpdate = await Service.update(serviceUpdate, 
 		{
-			service_name: req.body.name,
-			service_description: req.body.description,
-			service_price: req.body.price
+			service_name: req.body.service_name,
+			description: req.body.description,
+			price: req.body.price
 		},
 		{
 			where: {
@@ -72,7 +72,7 @@ router.put('/:id', async (req,res) => {
 }); 
 
 //delete method but id, services id placeholder for future services database pathway
-router.delete('./services/:id', async (req,res) => {
+router.delete('./:id', async (req,res) => {
 	try {
 		const servicesData = await Service.destroy({
 			where: {
