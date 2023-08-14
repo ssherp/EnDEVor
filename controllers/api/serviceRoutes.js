@@ -34,14 +34,16 @@ router.get('./services/:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
 		if (!quoteData) {
-			res.status(404).json({ message: 'Service not found' });
+			res.status(404).json({ message: 'No service found with this ID' });
 			return;
 		}
 		res.status(200).json(servicesData);
 	} catch {
 		res.status(400).json(err)
 	 }
-});//edit service by id  - 13.7, routes
+});
+
+//edit service by id  - 13.7, routes
 router.put('/:id', async (req,res) => {
 	try {
 		const serviceUpdate = await Service.update(serviceUpdate, 
@@ -61,6 +63,7 @@ router.put('/:id', async (req,res) => {
 		res.status(400).json(err);
 	}
 }); 
+
 
 
 
