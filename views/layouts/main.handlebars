@@ -40,15 +40,24 @@
                             <!--- Profile Link --->
                             <a class="nav-link" href="#">Profile</a>
                         </li>
-                        <li class="nav-item">
-                            <!--- Services Link --->
-                            <a class="nav-link" href="#">Services</a>
+                        <li class="nav-item dropdown">
+                            <!--- Services Dropdown --->
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                My Services
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <!--- Create Quote Link --->
+                                <li><a class="dropdown-item" href="#">View</a></li>
+                                <!--- Manager Quotes Link --->
+                                <li><a class="dropdown-item" href="#">Manage</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <!--- Quotes Dropdown --->
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Quotes
+                                My Quotes
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <!--- Create Quote Link --->
@@ -65,9 +74,9 @@
     <main>
         {{{body}}}
     </main>
-      {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
