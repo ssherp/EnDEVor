@@ -8,7 +8,7 @@ const updateProfileFormHandler = async (event) => {
     if (firstName && lastName) {
       const response = await fetch('/api/users/profile', {
         method: 'PUT',
-        body: JSON.stringify({ firstName, lastName }), // Add other attributes
+        body: JSON.stringify({ firstName, lastName, companyName,address,city,state,zip,email,phone,password}),
         headers: {
           'Content-Type': 'application/json',
         },

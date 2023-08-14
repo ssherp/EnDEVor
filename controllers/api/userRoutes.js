@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const withAuth = require('../utils/auth');
 
 router.post('/', async (req, res) => {
     try {
@@ -57,14 +56,21 @@ router.post('/', async (req, res) => {
 
 
 // Update profile route
-router.put('/profile', withAuth, async (req, res) => {
+router.put('/profile', async (req, res) => {
   try {
-    const { firstName, lastName, /* Other attributes */ } = req.body;
+    const { firstName, lastName, companyName,address,city,state,zip,email,phone,password } = req.body;
     const updatedUserData = await User.update(
       {
         firstName,
-        lastName,
-        // Update other attributes
+         lastName,
+          companyName,
+          address,
+          city,
+          state,
+          zip,
+          email,
+          phone,
+          password,
       },
       {
         where: {
