@@ -2,7 +2,7 @@ const loginFormHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the login form
-    const email = document.querySelector('#username').value.trim();
+    const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
   
     if (email && password) {
@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the home page
-        document.location.replace('/');
+        document.location.replace('/homepage');
       } else {
         alert(response.statusText);
       }
@@ -33,7 +33,7 @@ const loginFormHandler = async (event) => {
     if (firstName && lastName && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ firstName, lastName, email, password }),
+        body: JSON.stringify({ firstName, lastName, email, password}),
         headers: { 'Content-Type': 'application/json' },
       });
   
