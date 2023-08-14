@@ -41,7 +41,26 @@ router.get('./services/:id', async (req, res) => {
 	} catch {
 		res.status(400).json(err)
 	 }
-});
+});//edit service by id  - 13.7, routes
+router.put('/:id', async (req,res) => {
+	try {
+		const serviceUpdate = await Service.update(serviceUpdate, 
+		{
+			service_name: req.body.name,
+			service_description: req.body.description,
+			service_price: req.body.price
+		},
+		{
+			where: {
+				id: req.params.id, // use req.params.service_id depending on route
+			}
+		}
+	);
+		res.status(200).json(serviceUpdate)
+	} catch {
+		res.status(400).json(err);
+	}
+}); 
 
 
 
