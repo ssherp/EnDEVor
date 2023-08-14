@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-
+const withAuth = require('../utils/auth');
 
 router.post('/', async (req, res) => {
     try {
@@ -54,6 +54,35 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+
+// Update profile route
+router.put('/profile', withAuth, async (req, res) => {
+  try {
+    const { firstName, lastName, /* Other attributes */ } = req.body;
+    const updatedUserData = await User.update(
+      {
+        firstName,
+        lastName,
+        // Update other attributes
+      },
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    );
+
+    if (updatedUserData) {
+      res.status(200).json(updatedUserData);
+    } else {
+      res.status(404).json({ message: 'User not found' });
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
   router.post('/logout', (req, res) => {
