@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
 
 // GET all quotes
 router.get('/', async (req, res) => {
-    try {
+    try {   
         const quoteData = await Quote.findAll();
         console.log(quoteData);
         const quotes = quoteData.map((quote) => quote.get({ plain: true }));
@@ -27,11 +27,12 @@ router.get('/', async (req, res) => {
 // // GET a quote
 router.get('/:id', async (req, res) => {
     try {
-        const quoteId = req.params.id;
-        const quoteData = await quoteId.findByPk(quoteId);
+    const quoteData = await quoteId.findByPk(quoteId);
 
         if (!quoteData) {
-            res.status(404).json({ message: 'Quote not found!' });
+   
+        const quoteId = req.params.id;
+             res.status(404).json({ message: 'Quote not found!' });
             return;
         }
 
@@ -40,6 +41,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 // DELETE a quote
 router.delete('/:id', async (req, res) => {
