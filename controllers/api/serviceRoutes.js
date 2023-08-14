@@ -18,7 +18,6 @@ router.post('/', async (req,res) => {
 //get all services we offer for services page 
 router.get ('/', async (req, res) => {
 	try {
-		//get servicesData from Service model.
 		const servicesData = await Service.findAll();
 		console.log(servicesData)
 		const services = servicesData.map((service) => service.get({ plain: true })) 
@@ -32,21 +31,19 @@ router.get ('/', async (req, res) => {
 
 //get single service
 router.get('./services/:id', async (req, res) => {
-	//if not logged in, redirect
-	if (!req.session.loggedIn) { 
-		res.redirect('/login') //temporary pathway for login page
-	}
 	try {
-		const servicesData = await Service.findByPk(req.params.id) {
-			res.status(200).json(quoteData);
-			if (!quoteData) {
-				res.status(404).json({ message: 'Service not found' });
-				return;
-			}
-
-		
-	}
+		const servicesData = await Service.findByPk(req.params.id);
+		if (!quoteData) {
+			res.status(404).json({ message: 'Service not found' });
+			return;
+		}
+		res.status(200).json(servicesData);
+	} catch {
+		res.status(400).json(err)
+	 }
 });
+
+
 
 module.exports = router;
 
