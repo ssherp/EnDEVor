@@ -19,3 +19,10 @@ doc.text(`Project Title: ${quoteData.projectTitle}`);
 // finalize the PDF and end the stream
 doc.end();
 }
+
+
+
+//=======================================================//
+
+const fs = require('fs');
+
