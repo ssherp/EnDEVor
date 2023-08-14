@@ -1,33 +1,20 @@
 const router = require('express').Router();
-const { User, Service, Quote, Quote_Item } = require('../../models');
+const { Service } = require('../../models');
 
-
-
-// part of home route?
 //get all services we offer for services page 
-router.get ('/services/user', async (req, res) => {
+router.get ('/', async (req, res) => {
 	try {
-		const servicesData = await Service.findAll().catch((err) => {res.json(err);
-		});
-		const services = servicesData.map((service) => service.get({ plain: true }))
+		//get servicesData from Service model.
+		const servicesData = await Service.findAll();
+		console.log(servicesData)
+		const services = servicesData.map((service) => service.get({ plain: true })) 
+		res.status(200).json(services)
+		console.log(services) 
 		}
 	catch { 
-		res.status(500).json(err);
+		res.status(400).json(err);
 	}
 });
 
-//add new services to list
-router.post ('/services', async (req,res) => {
-
-}) 
-
-
-
-
-//assuming services is a different page...
-router.post('/services', async (req,res) => {
-
-
-})
-
 module.exports = router;
+
