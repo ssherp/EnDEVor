@@ -29,5 +29,8 @@ router.get('/homepage', withAuth, async (req, res)=>{
   }
 })
   
+router.get('/pizza', (req,res) => {
+  res.render('quote-file');
+})  
   
-  module.exports = router
+module.exports = router
