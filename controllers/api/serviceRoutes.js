@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Service } = require('../../models');
+const withAuth = require('../../utils/auth')
 
 //create new service to services list 
 router.post('/', async (req,res) => {
@@ -15,8 +16,8 @@ router.post('/', async (req,res) => {
 	} 
 });
 
-//get all services we offer for services page 
-router.get ('/', async (req, res) => {
+//GET all services
+router.get ('/', withAuth, async (req, res) => {
 	try {
 		const servicesData = await Service.findAll();
 		console.log(servicesData)
@@ -25,11 +26,17 @@ router.get ('/', async (req, res) => {
 		console.log(services) 
 		}
 	catch { 
-		res.status(400).json(err);
+		res.status(500).json(err);
 	}
 });
 
-//get single service
+/*potentially add this code instead of other models required.
+const servicesData = await Service.findAll({
+	include: [{ model: Service }], 
+}); 
+*/
+
+//GET single service
 router.get('./services/:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
@@ -80,7 +87,6 @@ router.delete('./services/:id', async (req,res) => {
 			res.status(400).json(err);
 		}
 });
-
 
 module.exports = router;
 
