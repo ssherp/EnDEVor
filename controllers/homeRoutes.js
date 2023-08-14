@@ -8,6 +8,19 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
+
+router.get('/homepage', withAuth, async (req, res)=>{
+  try{
+      res.render('homepage', { 
+        logged_in: req.session.logged_in 
+      });
+  }catch(error){
+      res.json( {error, loggedIn: req.session.log_in})
+  }
+})
   
+router.get('/pizza', (req,res) => {
+  res.render('quote-file');
+})  
   
-  module.exports = router
+module.exports = router

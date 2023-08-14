@@ -1,64 +1,7 @@
-<!--- Nav Bar --->
-<nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-        <!--- enDEVors --->
-        <a class="navbar-brand" href="#">enDEVors</a>
-        <!--- Nav Toggle Button --->
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--- Nav Menu Display --->
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-                <!--- enDEVors --->
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">enDEVors</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <!--- Home Link --->
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <!--- Profile Link --->
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <!--- Services Link --->
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <!--- Quotes Dropdown --->
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Quotes
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <!--- Create Quote Link --->
-                            <li><a class="dropdown-item" href="#">Create</a></li>
-                            <!--- Manager Quotes Link --->
-                            <li><a class="dropdown-item" href="#">Manage</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
 <main>
     <h1>{{project.title}} Quote</h1>
     <section>
         <!--- Display PDF --->
-        <iframe src="{{pdfFilePath}}" width="100%" height="600px"></iframe>
-        <div>
-            <!--- Edit Quote --->
-            <button>Edit Quote</button>
-            <!--- Download PDF --->
-            <button><a href="document.pdf" download>Download PDF</a></button>
-        </div>
+        <iframe src="/assets/"{{project title}}"dummy.pdf" width="100%" height="600px"></iframe>
     </section>
 </main>

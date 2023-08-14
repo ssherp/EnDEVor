@@ -5,6 +5,7 @@ const { Quote } = require('../../models');
 router.post('/', async (req, res) => {
     try {
         const quoteData = await Quote.create(req.body);
+        res.send('Quote PDF generated successfully');
         res.status(200).json(quoteData);
     } catch (err) {
         res.status(400).json(err);

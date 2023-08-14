@@ -1,54 +1,3 @@
-<!--- Nav Bar --->
-<nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-        <!--- enDEVors --->
-        <a class="navbar-brand" href="#">enDEVors</a>
-        <!--- Nav Toggle Button --->
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--- Nav Menu Display --->
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-                <!--- enDEVors --->
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">enDEVors</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <!--- Home Link --->
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <!--- Profile Link --->
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <!--- Services Link --->
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <!--- Quotes Dropdown --->
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Quotes
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <!--- Create Quote Link --->
-                            <li><a class="dropdown-item" href="#">Create</a></li>
-                            <!--- Manager Quotes Link --->
-                            <li><a class="dropdown-item" href="#">Manage</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
 <!-- Main Body -->
 <main>
     <header>
@@ -64,11 +13,11 @@
             <div class="row">
                  <!-- Project Title -->
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    <input type="text" class="form-control" placeholder="Project name" aria-label="Project name" id="project-title">
                 </div>
                 <!-- Date -->
                 <div class="col">
-                    <input type="date" class="form-control" placeholder="mm/dd/yyyy">
+                    <input type="date" class="form-control" placeholder="mm/dd/yyyy" id="project-due-date">
                 </div>
             </div>
             <!-- Client Info -->
@@ -76,11 +25,11 @@
             <div class="row">
                 <!-- First Name -->
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="client-first">
                 </div>
                 <!-- Last Name -->
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="client-last">
                 </div>
             </div>
             <!-- Email -->
@@ -176,7 +125,7 @@
             <h2>Order Info</h2>
             <label for="itemQuantity">Quantity:</label>
             <input type="number" id="itemQuantity" name="itemQuantity" value="1" required>
-            <select class="form-select" aria-label="Choose a service">
+            <select class="form-select" aria-label="Choose a service" id="serviceName">
                 <option selected>Choose a service</option>
                 <option value="1">{{}}</option>
                 <option value="2">{{}}</option>
