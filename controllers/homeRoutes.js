@@ -2,6 +2,19 @@ const router = require('express').Router();
 const { Service, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Routing Logic / Structure based on the Excalidraw
+// -  router.get('/') = New User / Existing User buttons ... New User = render(signup) Sign Up, Existing = render(login) login    
+// -  option 1. Sign-up = ('/signup') 
+// -  option 2. Log-in = ('/login')
+// After this, we go to the homepage
+// 1. ('/') -> ('/signup') -> ('/homepage')
+// 2. ('/') -> ('/login') -> ('/homepage')
+
+// Now, we can add
+// ('/addService') , ('editService') , ('quoteForm') , ('quoteFile') , ('etc etc...')
+
+//But we cannot test our code if we can't get this first step done... 
+
 
 router.get('/', (req, res) => {
   
