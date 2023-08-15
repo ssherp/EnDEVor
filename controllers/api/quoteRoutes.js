@@ -1,11 +1,15 @@
 const router = require('express').Router();
-const { Quote } = require('../../models');
+const { Quote, Quote_Item } = require('../../models');
+
 
 // CREATE a quote
 router.post('/', async (req, res) => {
     try {
         const quoteData = await Quote.create(req.body);
-        res.send('Quote PDF generated successfully');
+        for (const quoteItem of req.body.quote_items) {
+            await Quote_Item.create(quoteItem)
+        }
+        // res.send('Quote PDF generated successfully');
         res.status(200).json(quoteData);
     } catch (err) {
         res.status(500).json(err);
@@ -15,7 +19,9 @@ router.post('/', async (req, res) => {
 // GET all quotes
 router.get('/', async (req, res) => {
     try {   
-        const quoteData = await Quote.findAll();
+        const quoteData = await Quote.findAll({
+            include: [{model : Quote_Item}]
+        });
         console.log(quoteData);
         const quotes = quoteData.map((quote) => quote.get({ plain: true }));
         console.log("quotes", quotes);

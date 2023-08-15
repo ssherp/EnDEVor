@@ -21,6 +21,10 @@ Quote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // service_ordered: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     client_first: {
       type: DataTypes.STRING,
       allowNull: false,
