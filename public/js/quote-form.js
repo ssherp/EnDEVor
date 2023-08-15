@@ -35,10 +35,10 @@ const notes = document.querySelector('#floatingTextarea2').value.trim();
 //TODO:
 //User Info
 //pull information from the user model
-const userFirst = ;//user first name
-const userLast = ;//user last name
-const userEmail = ;//user email
-const userPhone = ;//user phone number
+const userFirst = //user first name
+const userLast = //user last name
+const userEmail = //user email
+const userPhone = //user phone number
 
 //User Contact Section
 const userContactInfo = userFirst + " " + userLast + "\n" + userEmail + "\n" + userPhone
