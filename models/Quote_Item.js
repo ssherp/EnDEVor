@@ -24,6 +24,7 @@ Quote_Item.init(
     },
     quote_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'quote',
         key: 'id',

@@ -6,18 +6,20 @@ const withAuth = require('../../utils/auth')
 router.post('/', async (req,res) => {
 	try {
 		const serviceData = await Service.create({
-			service_name: req.body.name,
+			service_name: req.body.service_name,
 			description: req.body.description,
-			price: req.body.price
+			price: req.body.price,
+			user_id: req.body.user_id
 		});
 		res.status(200).json(serviceData)
-	} catch {
-		req.status(400).json(err);
+	} catch (err) {
+		console.log(err)
+		res.status(400).json(err);
 	} 
 });
 
 //GET all services
-router.get ('/', withAuth, async (req, res) => {
+router.get ('/',  async (req, res) => {
 	try {
 		const servicesData = await Service.findAll();
 		console.log(servicesData)
@@ -30,21 +32,21 @@ router.get ('/', withAuth, async (req, res) => {
 	}
 });
 
-//GET all services for logged-in user
-router.get ('/', withAuth, async (req, res) => {
-	try {
-		const servicesData = await Service.findAll({
-			where: { user_id: req.session.user_id }
-		});
-		console.log(servicesData)
-		const services = servicesData.map((service) => service.get({ plain: true })) 
-		res.status(200).json(services)
-		console.log(services) 
-		}
-	catch { 
-		res.status(500).json(err);
-	}
-});
+// //GET all services for logged-in user
+// router.get ('/', withAuth, async (req, res) => {
+// 	try {
+// 		const servicesData = await Service.findAll({
+// 			where: { user_id: req.session.user_id }
+// 		});
+// 		console.log(servicesData)
+// 		const services = servicesData.map((service) => service.get({ plain: true })) 
+// 		res.status(200).json(services)
+// 		console.log(services) 
+// 		}
+// 	catch { 
+// 		res.status(500).json(err);
+// 	}
+// });
 
 /*potentially add this code instead of other models required.
 const servicesData = await Service.findAll({
