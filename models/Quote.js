@@ -1,9 +1,11 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Quote extends Model {}
 
+//moved foreign keys to bottom, check comments
 Quote.init(
+
   {
     id: {
       type: DataTypes.INTEGER,
@@ -81,6 +83,4 @@ Quote.init(
     modelName: 'Quote',
   }
 
-  );
-
-  module.exports = Quote;
+module.exports = Quote;
