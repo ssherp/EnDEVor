@@ -11,6 +11,24 @@ Quote.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    project_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+     project_due_date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    user_id: {
+      references: {
+        model: 'user',
+        key: 'id',
+        key: 'firstName',
+        key: 'lastName',
+        key: 'email',
+        key: 'phone',
+      },
+    },
     client_first: {
       type: DataTypes.STRING,
       allowNull: false,

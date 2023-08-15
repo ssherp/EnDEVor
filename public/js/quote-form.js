@@ -1,6 +1,8 @@
 //Require the pdfkit package
 const PDFDocument = require('pdfkit');
 
+
+
 //------------------------------ Query Selectors ------------------------------//
 //create variables for the user inputs
 //Project Query Selectors
@@ -22,6 +24,14 @@ const clientZip = document.querySelector('#inputZip').value.trim();
 const clientContactInfo = clientFirst + " " + clientLast + "\n" + clientEmail + "\n" + clientPhone;
 const clientAddressInfo = clientAddress + "\n" + clientAddress2 + "\n" + clientCity + ", " + clientState + " " + clientZip;
 
+//Service Query Selectors
+const itemQuantity = document.querySelector('#itemQuantity').value.trim();
+const serviceName = document.querySelector('#serviceName').value.trim();
+const notes = document.querySelector('#floatingTextarea2').value.trim();
+
+
+
+//------------------------------ Get User Info ------------------------------//
 //TODO:
 //User Info
 //pull information from the user model
@@ -33,14 +43,21 @@ const userPhone = ;//user phone number
 //User Contact Section
 const userContactInfo = userFirst + " " + userLast + "\n" + userEmail + "\n" + userPhone
 
-//Service Query Selectors
-const itemQuantity = document.querySelector('#itemQuantity').value.trim();
-const serviceName = document.querySelector('#serviceName').value.trim();
-const notes = document.querySelector('#floatingTextarea2').value.trim();
 
+
+//------------------------------ Event Listener Buttons ------------------------------//
 //Add & Create Buttons
 const addQuoteItemBtn = document.querySelector("#add-item");
 const createQuotePDFBtn = document.getElementById("#submit");
+
+
+//Event Listener for adding a new quote item
+addQuoteItemBtn.addEventListener("click", addQuoteItem);
+
+//Event Listener for creating quote with user inputs
+createQuotePDFBtn.addEventListener("click", createQuotePDF);
+
+
 
 //------------------------------ Add Service Options ------------------------------//
 
@@ -67,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
     populateDropdown();
 });
 
+
+
 //------------------------------ Add Quote Item ------------------------------//
 
-//TODO:
 //Write a function to add a new line item for each new service added to the quote items
 function addQuoteItem() {
     //copy the select element
@@ -96,6 +114,7 @@ function addQuoteItem() {
     const existingButton = document.querySelector('.add-item');
     container.replaceChild(addButton, existingButton);
 };
+
 
 
 //------------------------------ Create the PDF ------------------------------//
@@ -179,16 +198,4 @@ function createQuotePDF() {
 
     //End PDF Stream
     doc.end();
-
-    doc.end();
-    stream.on('finish', function () {
-        iframe.src = stream.toBlobURL(projectTitle + '.pdf');
-    });
 };
-
-
-//Event Listener for adding a new quote item
-addQuoteItemBtn.addEventListener("click", addQuoteItem);
-
-//Event Listener for creating quote with user inputs
-createQuotePDFBtn.addEventListener("click", createQuotePDF);
