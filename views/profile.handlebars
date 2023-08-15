@@ -1,6 +1,8 @@
 {{#if logged_in}}
   <h2>Edit Profile</h2>
+  
   <form id="update-profile-form">
+    {{#each serializedUserData as |user|}}
     <div class="mb-3">
       <label for="inputFirstName" class="form-label">First Name</label>
       <input type="text" class="form-control" id="inputFirstName" value="{{ user.firstName }}">
@@ -41,10 +43,11 @@
       <label for="inputPassword" class="form-label">Password</label>
       <input type="text" class="form-control" id="inputPassword" value="{{ user.password }}">
     </div>
-    
+     {{/each}}
 
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
+ 
 {{else}}
   <p>Please log in to view your profile.</p>
 {{/if}}
