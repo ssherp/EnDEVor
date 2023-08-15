@@ -53,7 +53,7 @@ User.init(
       },
     },
     phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     password: {

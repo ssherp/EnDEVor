@@ -18,16 +18,35 @@ router.get('/homepage', withAuth, async (req, res)=>{
   }
 })
 
-//checks if user logged in
-router.get('/login', (req, res) => {
-  // If a session exists, redirect the request to the homepage
-  if (!req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-  res.render('login');
-});
 
+// Route to render the profile page
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Fetch the user data from the database using the user_id stored in the session
+    const userData = await User.findByPk({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    if (!userData) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    // Serialize user data for the template
+    const serializedUserData = userData.map((data) => data.get({ plain: true }));
+
+    // Render the profile template and pass the serialized user data
+    res.render('profile', {
+      ...serializedUserData,
+      logged_in: true,
+    });
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({err});
+  }
+});
 
 
 router.get('/pizza', (req,res) => {
