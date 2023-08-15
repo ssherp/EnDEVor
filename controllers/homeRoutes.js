@@ -2,19 +2,6 @@ const router = require('express').Router();
 const { Service, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Routing Logic / Structure based on the Excalidraw
-// -  router.get('/') = New User / Existing User buttons ... New User = render(signup) Sign Up, Existing = render(login) login    
-// -  option 1. Sign-up = ('/signup') 
-// -  option 2. Log-in = ('/login')
-// After this, we go to the homepage
-// 1. ('/') -> ('/signup') -> ('/homepage')
-// 2. ('/') -> ('/login') -> ('/homepage')
-
-// Now, we can add
-// ('/addService') , ('editService') , ('quoteForm') , ('quoteFile') , ('etc etc...')
-
-//But we cannot test our code if we can't get this first step done... 
-
 
 router.get('/', (req, res) => {
   
@@ -32,15 +19,29 @@ router.get('/homepage', withAuth, async (req, res)=>{
   }
 })
 
-router.get('/profile', withAuth, async (req, res)=>{
-  try{
-      res.render('profile', { 
-        logged_in: req.session.logged_in 
-      });
-  }catch(error){
-      res.json( {error, loggedIn: req.session.log_in})
+// Route to render the profile page
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Fetch the user data from the database using the user_id stored in the session
+    const userData = await User.findByPk(req.session.user.id,);
+
+    if (!userData) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    // Serialize user data for the template
+    const serializedUserData = userData.map((data) => data.get({ plain: true }));
+
+    // Render the profile template and pass the serialized user data
+    res.render('profile', {
+      ...serializedUserData,
+      logged_in: req.session.logged_in,
+    });
+  } catch (error) {
+    res.status(500).json({ error });
   }
-})
+});
 
 router.get('/pizza', (req,res) => {
   res.render('quote-file');

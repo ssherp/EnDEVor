@@ -1,6 +1,7 @@
 {{#if logged_in}}
   <h2>Edit Profile</h2>
   <form id="update-profile-form">
+    {{#each}}
     <div class="mb-3">
       <label for="inputFirstName" class="form-label">First Name</label>
       <input type="text" class="form-control" id="inputFirstName" value="{{ user.firstName }}">
