@@ -19,16 +19,6 @@ Quote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      references: {
-        model: 'user',
-        key: 'id',
-        key: 'firstName',
-        key: 'lastName',
-        key: 'email',
-        key: 'phone',
-      },
-    },
     client_first: {
       type: DataTypes.STRING,
       allowNull: false,
