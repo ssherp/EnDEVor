@@ -11,8 +11,8 @@ router.post('/', async (req,res) => {
 			price: req.body.price
 		});
 		res.status(200).json(serviceData)
-	} catch {
-		req.status(400).json(err);
+	} catch (err) {
+		req.status(500).json(err);
 	} 
 });
 
@@ -25,7 +25,7 @@ router.get ('/', withAuth, async (req, res) => {
 		res.status(200).json(services)
 		console.log(services) 
 		}
-	catch { 
+	catch (err) { 
 		res.status(500).json(err);
 	}
 });
@@ -41,7 +41,7 @@ router.get ('/', withAuth, async (req, res) => {
 		res.status(200).json(services)
 		console.log(services) 
 		}
-	catch { 
+	catch (err) { 
 		res.status(500).json(err);
 	}
 });
@@ -61,8 +61,8 @@ router.get('./:id', async (req, res) => {
 			return;
 		}
 		res.status(200).json(servicesData);
-	} catch {
-		res.status(400).json(err)
+	} catch (err) {
+		res.status(500).json(err)
 	 }
 });
 
@@ -82,8 +82,8 @@ router.put('/:id', async (req,res) => {
 		}
 	);
 		res.status(200).json(serviceUpdate)
-	} catch {
-		res.status(400).json(err);
+	} catch (err) {
+		res.status(500).json(err);
 	}
 }); 
 
@@ -99,8 +99,8 @@ router.delete('./:id', async (req,res) => {
 				return;
 			}
 			res.status(200).json(servicesData);
-		} catch {
-			res.status(400).json(err);
+		} catch (err) {
+			res.status(500).json(err);
 		}
 });
 
