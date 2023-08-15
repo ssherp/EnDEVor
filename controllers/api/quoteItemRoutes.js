@@ -27,11 +27,10 @@ router.get('/', async (req, res) => {
 // // GET a quote
 router.get('/:id', async (req, res) => {
     try {
+    const quoteId = req.params.id;
     const quoteData = await quoteId.findByPk(quoteId);
-
         if (!quoteData) {
-   
-        const quoteId = req.params.id;
+
              res.status(404).json({ message: 'Quote not found!' });
             return;
         }
