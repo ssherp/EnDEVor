@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create({
@@ -54,6 +53,42 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+
+// Update profile route
+router.put('/profile', async (req, res) => {
+  try {
+    const { firstName, lastName, companyName,address,city,state,zip,email,phone,password } = req.body;
+    const updatedUserData = await User.update(
+      {
+        firstName,
+         lastName,
+          companyName,
+          address,
+          city,
+          state,
+          zip,
+          email,
+          phone,
+          password,
+      },
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    );
+
+    if (updatedUserData) {
+      res.status(200).json(updatedUserData);
+    } else {
+      res.status(404).json({ message: 'User not found' });
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
   router.post('/logout', (req, res) => {

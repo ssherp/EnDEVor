@@ -1,0 +1,19 @@
+<!--iterate through all services and create, trying out partials -Aaron-->
+<div class="container">
+	<section id="services-list" class="row col-6 align-self-start">
+		<form>
+			<header class="text-center">Services</header>
+			<!--Consider turning div into clickable button to add service as a quote-item-->
+			<div class="service-card">
+				<p>
+					{{#each services as |service|}}alignment
+					{{> services-details}} <!--check partials-->
+					{{/each}}
+				</p>
+			</div>
+			<button id="serviceAddBtn">Add</button>
+		</form>
+	</section>
+
+</div>
+<script src="/public/js/services.js"></script>

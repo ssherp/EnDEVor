@@ -3,16 +3,22 @@ const Service = require("./Service");
 const Quote_Item = require("./Quote_Item");
 const Quote = require("./Quote");
 
-User.hasMany(Service, {
-	foreignKey: "user_id",
+Quote_Item.belongsTo(Quote, {
+	foreignKey: "quote_id",
+	onDelete: "CASCADE"
 });
 
-User.hasMany(Quote, {
-	foreignKey: "user_id",
+Quote.hasMany(Quote_Item, {
+	foreignKey: "quote_id",
+
 });
 
-User.hasMany(Quote_Item, {
-	foreignKey: "user_id",
+Quote_Item.belongsTo(Service, {
+	foreignKey: "service_id"
+});
+
+Service.hasMany(Quote_Item, {
+	foreignKey: "service_id"
 });
 
 Service.belongsTo(User, {
@@ -20,24 +26,23 @@ Service.belongsTo(User, {
 	onDelete: "CASCADE"
 });
 
-Service.hasMany(Quote_Item, {
-	foreignKey: "service_id"
-});
-
-Quote_Item.belongsTo(Service, {
-	foreignKey: "service_id"
-});
-
-Quote_Item.belongsTo(Quote, {
-	foreignKey: "quote_id",
-});
-
-Quote.hasMany(Quote_Item, {
-	foreignKey: "quote_item_id",
-	onDelete: "CASCADE"
+User.hasMany(Service, {
+	foreignKey: "user_id",
 });
 
 Quote.belongsTo(User, {
+	foreignKey: "user_id",
+});
+
+
+User.hasMany(Quote, {
+	foreignKey: "user_id",
+});
+
+
+//reorganized relationships, this one might be redundant. 
+//quoteitem -> services/:id -> user 
+User.hasMany(Quote_Item, {
 	foreignKey: "user_id",
 });
 
