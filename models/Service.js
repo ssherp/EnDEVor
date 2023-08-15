@@ -18,7 +18,7 @@ Service.init(
     description: {
       type: DataTypes.TEXT,
     },   
-    price : {
+    price: {
       type: DataTypes.FLOAT,
       allowNull: false,
     },
