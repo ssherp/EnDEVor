@@ -1,19 +1,21 @@
 <!-- Main Body -->
+<link rel="stylesheet" href="/css/quote-form.css">
 <main>
     <header>
         <h1>
             Create Quote
         </h1>
     </header>
-    <section>
+    <section class="glass-bg">
         <!-- Quote Form -->
         <form>
             <!-- Project -->
             <h2>Project</h2>
             <div class="row">
-                 <!-- Project Title -->
+                <!-- Project Title -->
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Project name" aria-label="Project name" id="project-title">
+                    <input type="text" class="form-control" placeholder="Project name" aria-label="Project name"
+                        id="project-title">
                 </div>
                 <!-- Date -->
                 <div class="col">
@@ -25,11 +27,13 @@
             <div class="row">
                 <!-- First Name -->
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="client-first">
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name"
+                        id="client-first">
                 </div>
                 <!-- Last Name -->
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="client-last">
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
+                        id="client-last">
                 </div>
             </div>
             <!-- Email -->
@@ -123,15 +127,15 @@
             </div>
             <!-- Order Info -->
             <h2>Order Info</h2>
-            <label for="itemQuantity">Quantity:</label>
-            <input type="number" id="itemQuantity" name="itemQuantity" value="1" required>
-            <select class="form-select" aria-label="Choose a service" id="serviceName">
-                <option selected>Choose a service</option>
-                <option value="1">{{}}</option>
-                <option value="2">{{}}</option>
-                <option value="3">{{}}</option>
-            </select>
-            <button id="add-item" type="submit">Add Item</button>
+            <div id="service-item">
+                <label for="itemQuantity">Qty:</label>
+                <input type="number" id="itemQuantity" name="itemQuantity" value="1" required>
+                <label for="itemQuantity">Service:</label>
+                <select class="form-select" aria-label="Choose a service" id="serviceName">
+                    <option selected>Choose a service</option>
+                </select>
+                <button id="add-item" type="submit">Add Item</button>
+            </div>
             <!-- Notes -->
             <h2>Notes</h2>
             <div class="form-floating">
@@ -139,7 +143,7 @@
                 <label for="floatingTextarea2">Notes</label>
             </div>
             <!-- Submit Button -->
-            <button id="submit" type="submit">Submit</button>
+            <button id="submit" type="submit">Create</button>
         </form>
     </section>
 </main>
