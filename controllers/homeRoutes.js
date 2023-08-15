@@ -18,7 +18,17 @@ router.get('/homepage', withAuth, async (req, res)=>{
       res.json( {error, loggedIn: req.session.log_in})
   }
 })
-  
+
+router.get('/profile', withAuth, async (req, res)=>{
+  try{
+      res.render('profile', { 
+        logged_in: req.session.logged_in 
+      });
+  }catch(error){
+      res.json( {error, loggedIn: req.session.log_in})
+  }
+})
+
 router.get('/pizza', (req,res) => {
   res.render('quote-file');
 })  
