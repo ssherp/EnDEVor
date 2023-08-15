@@ -22,22 +22,10 @@ async function servicesListHandler(event) {
 	}
 }
 
-async function editServiceHandler(event) {
-	event.preventDefault();
-	const edit_name = document.querySelector('#edit-name').value;
-	const edit_description = document.querySelector('#edit_description').value;
-	const edit_price = document.querySelector('#edit-price').value;
 
-	const response = await fetch (`/api/services/:id`, {
-		method: 'PUT',
-
-
-	})
-}
 
 document.querySelector('services-list').addEventListener('submit', servicesListHandler);
-//edit + delete button. may need to use 'click' method.
-document.querySelector('edit-service').addEventListener('submit', editServiceHandler);
+
 
 //saw headers on link below
 //refresher on fetch https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
