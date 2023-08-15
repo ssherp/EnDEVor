@@ -23,10 +23,6 @@ Quote.init(
       references: {
         model: 'user',
         key: 'id',
-        key: 'firstName',
-        key: 'lastName',
-        key: 'email',
-        key: 'phone',
       },
     },
     client_first: {
