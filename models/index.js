@@ -1,7 +1,7 @@
 const User = require("./User");
 const Service = require("./Service");
-const Quote_Item = require("./Quote_Item");
 const Quote = require("./Quote");
+const Quote_Item = require("./Quote_Item");
 
 Quote_Item.belongsTo(Quote, {
 	foreignKey: "quote_id",
