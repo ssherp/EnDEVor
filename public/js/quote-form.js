@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to populate select dropdown with services
     async function populateDropdown() {
       try {
-        const response = await fetch('/services');
+        const response = await fetch('/api/services');
         const services = await response.json();
 
         for (const service of services) {
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //Write a function to add a new line item for each new service added to the quote items
 function addQuoteItem() {
     //copy the select element
-    const firstItem = document.getElementById('serviceName');
-    const newItem = firstItem.cloneNode(true);
+    const firstItem = document.getElementById('serviceName'); //global
+    const newSelect = firstItem.cloneNode(true);
 
     //Make new selection value is cleared
     newSelect.selectedIndex = 0;

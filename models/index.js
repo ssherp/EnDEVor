@@ -42,6 +42,7 @@ User.hasMany(Quote, {
 
 //reorganized relationships, this one might be redundant. 
 //quoteitem -> services/:id -> user 
+
 User.hasMany(Quote_Item, {
 	foreignKey: "user_id",
 });
