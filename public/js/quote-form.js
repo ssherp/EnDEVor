@@ -42,6 +42,31 @@ const notes = document.querySelector('#floatingTextarea2').value.trim();
 const addQuoteItemBtn = document.querySelector("#add-item");
 const createQuotePDFBtn = document.getElementById("#submit");
 
+//------------------------------ Add Service Options ------------------------------//
+
+document.addEventListener('DOMContentLoaded', () => {
+    const selectElement = document.getElementById('serviceName');
+
+    // Function to populate select dropdown with services
+    async function populateDropdown() {
+      try {
+        const response = await fetch('/services');
+        const services = await response.json();
+
+        for (const service of services) {
+          const option = document.createElement('option');
+          option.value = service.id;
+          option.textContent = service.name + "\n" + service.price;
+          selectElement.appendChild(option);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    populateDropdown();
+});
+
 //------------------------------ Add Quote Item ------------------------------//
 
 //TODO:
