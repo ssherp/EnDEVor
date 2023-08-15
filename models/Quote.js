@@ -21,12 +21,6 @@ Quote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
     client_first: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -62,14 +56,7 @@ Quote.init(
     client_phone: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    quote_item_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'quote_item',
-        key: 'id',
-      },
-    },   
+    }, 
     notes: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -82,5 +69,6 @@ Quote.init(
     underscored: true,
     modelName: 'Quote',
   }
+);
 
 module.exports = Quote;
