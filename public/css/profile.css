@@ -1,0 +1,47 @@
+/*----- COLOR -----*/
+:root {
+    --dark: #272822;
+    --light: #F8F8F3;
+    --blue: #0D859A;
+    --lightOrange: #F08C01;
+    --orange: #E8580C;
+    --red: #E23230;
+
+}
+
+/*-------------------- DEFAULT CSS --------------------*/
+
+/*----- MAIN -----*/
+main {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#update-profile-form {
+    color: var(--red);  
+    text-align: center;
+}
+
+
+.form-label {
+    background: rgba(3, 7, 238, 0.932);
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.card-body {
+    background-color:gold;      
+}
+
+h2 {
+    color: var(--orange);
+    font-size: 50px;
+    text-align: left;
+}
+
