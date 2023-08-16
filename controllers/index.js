@@ -15,8 +15,8 @@ router.use('/services', servicesRoutes);
 router.use('/services/edit', editServiceRoutes);
 // profile route -> when does user fill this out?
 // quote routes
-router.use('/quote-form', quoteFormRoutes);
-router.use('/quote-file', quoteFileRoutes);
+router.use('/quote_form', quoteFormRoutes);
+router.use('/quote_file', quoteFileRoutes);
 
 
 module.exports = router;

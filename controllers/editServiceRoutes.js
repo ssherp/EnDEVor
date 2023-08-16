@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res)=>{
 	try{
+		const servicesList = await Service.findByPk(req.)
 		 res.render('edit-service', { 
 			logged_in: req.session.logged_in 
 		 });

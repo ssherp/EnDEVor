@@ -6,10 +6,8 @@ const withAuth = require('../../utils/auth')
 router.post('/', async (req,res) => {
 	try {
 		const serviceData = await Service.create({
-			service_name: req.body.service_name,
-			description: req.body.description,
-			price: req.body.price,
-			user_id: req.body.user_id
+			...req.body,
+			user_id: req.session.user_id
 		});
 		res.status(200).json(serviceData)
 	} catch (err) {

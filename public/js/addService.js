@@ -1,32 +1,34 @@
 //using submit event listener, all changes will be at click of button in function.
-async function servicesListHandler(event) {
+async function addServiceHandler(event) {
 	event.preventDefault();
 	//grab all html names from partials, used service_name so name doesn't have line through it
 	const service_name = document.querySelector('#service-name').value.trim();
 	const description = document.querySelector('#service-price').value.trim();
 	const service_price = document.querySelector('#service-description').value.trim();
 	// Sending response to add new service
-	const response = await fetch (`/api/services/`, {
-		method: 'POST',
-		body: JSON.stringify({
-			service_name,
-			description,
-			service_price,
-			user_id,
-		}),
-		headers: { 'Content-Type': 'services/json' }
-	})
-	.then(response => response.json(data))
-	.then(data =>console.log(data));
-	// if (response.ok) 
-	// 	document.location.replace('/services/');
-	// else {
-	// 	alert('Failed to add service');
-	// }
-}
-async function editServiceRoute()
+	if (service_name && description && service_price) { 
+		const response = await fetch (`/api/services/`, {
+			method: 'POST',
+			body: JSON.stringify({
+				service_name,
+				description,
+				service_price,
+			}),
+			headers: { 'Content-Type': 'services/json' },
+		})
+		if (response.ok) 
+			document.location.replace('/')
+		else {
 
-document.querySelector('services-list').addEventListener('submit', servicesListHandler)
+			alert('Failed to add service');
+		}
+	}
+};
+
+
+document
+	.querySelector('services-list')
+	.addEventListener('submit', addServiceHandler)
 document.getElementById('#edit-service-btn').addEventListener('click', editServiceRoute)
 
 
