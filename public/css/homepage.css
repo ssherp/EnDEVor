@@ -1,0 +1,136 @@
+/*----- COLOR & FONTS -----*/
+:root {
+    --dark: #272822;
+    --light: #F8F8F3;
+    --blue: #0D859A;
+    --lightOrange: #F08C01;
+    --orange: #E8580C;
+    --red: #E23230;
+    --main: 'Press Start 2P', cursive;
+    --other: 'Source Code Pro', monospace;
+}
+
+/*-------------------- DEFAULT CSS --------------------*/
+
+
+/*----- MAIN -----*/
+main {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(/assets/other-background.webp);
+    background-size: cover;
+    background-position: center center;
+}
+
+/*----- GLASS BACKGROUND -----*/
+.glass-bg {
+    background: rgba(255, 255, 255, 0.171);
+    backdrop-filter: saturate(180%) blur(10px);
+    border: var(--blue) solid 3px;
+    width: 80%;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .glass-bg {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/*----- WELCOME HEADER -----*/
+.logo {
+    outline: red dashed 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+h1 {
+    color: var(--light);
+    font-size: 50px;
+    text-align: center;
+    font-family: var(--main);
+    width: 100%;
+    margin-left: 0;
+}
+
+.logo img {
+    width: auto;
+    height: 80px;
+    margin-right: 0;
+}
+
+/*----- GUIDE HEADER -----*/
+h2 {
+    color: var(--orange);
+    font-size: 45px;
+    text-align: center;
+    margin: 20px;
+    font-family: var(--other);
+}
+
+h3 {
+    color: var(--red);
+    font-size: 45px;
+    text-align: center;
+    margin: 20px;
+    font-family: var(--other);
+}
+
+/*----- LINKS -----*/
+.all-links {
+    outline: blue dashed 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.all-links button {
+    background-color: var(--dark);
+    color: var(--red);
+    border: var(--red) solid 3px;
+    padding: 10px;
+    font-family: var(--other);
+}
+
+.all-links a {
+    color: var(--red);
+    font-size: 15px;
+    text-decoration: none;
+    font-family: var(--other);
+}
+
+.top-links {
+    outline: green dashed 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom-links {
+    outline: purple dashed 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}

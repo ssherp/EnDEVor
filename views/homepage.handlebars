@@ -1,23 +1,44 @@
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap"
+    rel="stylesheet">
+<!-- CSS Link -->
+<link rel="stylesheet" href="/css/homepage.css">
+<!-- Main Body -->
 <main>
-    <div>
+    <!-- "Glass" Background -->
+    <div class="glass-bg">
+        <div class="logo">
+            <h1>enDEVors</h1><img src="/assets/technology.png">
+        </div>
+        <!-- Headers -->
         <header>
-            <h1>Welcome to enDEVors!</h1>
-            <h2>What can we help you with today?</h2>
+            <h2>Welcome!</h2>
+            <h3>What can we help you with today?</h3>
         </header>
-        <div>
-            <button><a class="create-quote" href="/quote-form">Create Quote</a></button>
-            <button><a class="manage-services" href="/service">Manage Services</a></button>
-        </div>
-        <div>
-            <button><a class="edit-profile" href="/profile">Profile</a></button>
-            <div class="login">
-                {{#if logged_in}}
-                <button class="log-out" id="logout">Log Out</button>
-                {{else}}
-                <a class="login" href="/login">Log In</a>
-                {{/if}}
+        <!-- Site Links -->
+        <section class="all-links">
+            <div class="top-links">
+                <!-- Create Quote Link -->
+                <button><a class="create-quote" href="/quote-form">Create Quote</a></button>
+                <!-- Manage Services Link -->
+                <button><a class="manage-services" href="/service">Manage Services</a></button>
             </div>
-        </div>
+            <div class="bottom-links">
+                <!-- Edit Profile Link -->
+                <button><a class="edit-profile" href="/profile">Profile</a></button>
+                <!-- Logout -->
+                <div class="login">
+                    {{#if logged_in}}
+                    <button class="log-out" id="logout">Log Out</button>
+                    {{else}}
+                    <a class="login" href="/login">Log In</a>
+                    {{/if}}
+                </div>
+            </div>
+        </section>
     </div>
 </main>
+<!-- JS Link -->
 <script src="/js/homepage.js"></script>
