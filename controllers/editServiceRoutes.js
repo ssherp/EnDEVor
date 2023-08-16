@@ -8,7 +8,7 @@ router.get('/services/edit', withAuth, async (req, res)=>{
 			logged_in: req.session.logged_in 
 		 });
 	}catch(error){
-		 res.json( {error, loggedIn: req.session.log_in})
+		 res.status(500).json({ error, loggedIn: req.session.log_in })
 	}
  })
 

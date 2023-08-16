@@ -22,8 +22,6 @@ async function servicesListHandler(event) {
 	}
 }
 
-
-
 document.querySelector('services-list').addEventListener('submit', servicesListHandler);
 
 

@@ -6,6 +6,7 @@ const { Quote, Quote_Item } = require('../../models');
 router.post('/', async (req, res) => {
     try {
         const quoteData = await Quote.create(req.body);
+        //do we need to add quote_items to model?
         for (const quoteItem of req.body.quote_items) {
             await Quote_Item.create(quoteItem)
         }
