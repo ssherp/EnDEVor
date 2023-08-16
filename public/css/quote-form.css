@@ -53,3 +53,12 @@ h2 {
     text-align: left;
 }
 
+/*----- Aaron added -----*/
+.header-logo {
+    background: rgba(255, 255, 255, 0.561);
+    backdrop-filter: saturate(180%) blur(10px);
+    width: 20%;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-bottom: 10%
+}
