@@ -1,4 +1,4 @@
-/*----- COLOR -----*/
+/*----- COLOR & FONTS -----*/
 :root {
     --dark: #272822;
     --light: #F8F8F3;
@@ -6,7 +6,8 @@
     --lightOrange: #F08C01;
     --orange: #E8580C;
     --red: #E23230;
-
+    --main: 'Press Start 2P', cursive;
+    --other: 'Source Code Pro', monospace;
 }
 
 /*-------------------- DEFAULT CSS --------------------*/
@@ -20,31 +21,125 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
 /*----- HEADER -----*/
 h1 {
-    color: var(--blue);
-    font-size: 60px;
+    font-family: var(--main);
+    color: var(--light);
+    font-size: 70px;
     text-align: center;
 }
 
+h2 {
+    font-family: var(--main);
+    color: var(--blue);
+    font-size: 25px;
+    text-align: center;
+}
+
+
 /*----- FORM CARD -----*/
 .glass-bg {
+
+/*----- FORMS -----*/
+.home-forms {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*----- LOG IN GLASS BACKGROUND -----*/
+#login-form {
+
     background: rgba(255, 255, 255, 0.171);
     backdrop-filter: saturate(180%) blur(10px);
-    width: 80%;
+    width: 100%;
     border-radius: 15px;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--blue) solid 3px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-
-
-/*----- PROJECT INFO -----*/
-h2 {
-    color: var(--orange);
-    font-size: 30px;
-    text-align: left;
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    #login-form {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
 }
 
+/*----- LOG IN LABELS -----*/
+#login-form label {
+    font-family: var(--main);
+    color: var(--lightOrange);
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.login-btn {
+    background-color: var(--dark);
+    color: var(--red);
+    border: var(--red) solid 3px;
+    padding: 5px;
+    font-family: var(--main);
+    margin-top: 15px;
+}
+
+/*----- SIGN UP GLASS BACKGROUND -----*/
+#signup-form {
+    background: rgba(255, 255, 255, 0.171);
+    backdrop-filter: saturate(180%) blur(10px);
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--blue) solid 3px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    #signup-form {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/*----- SIGN UP LABELS -----*/
+#signup-form label {
+    font-family: var(--main);
+    color: var(--lightOrange);
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#signup-form div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form-text {
+    color: var(--red);
+}
+
+#submit-btn {
+    background-color: var(--dark);
+    color: var(--red);
+    border: var(--red) solid 3px;
+    padding: 5px;
+    font-family: var(--main);
+    margin-top: 15px;
+}
