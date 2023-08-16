@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res)=>{
 	try {
-		 res.render('quote-file', { 
+		 res.render('quote_file', { 
 			logged_in: req.session.logged_in 
 		 });
 	} catch(error) {
