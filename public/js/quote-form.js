@@ -32,20 +32,19 @@ const notes = document.querySelector('#floatingTextarea2').value.trim();
 
 
 //------------------------------ Get User Info ------------------------------//
-//TODO:
-//User Info
-//pull information from the user model
-const userFirst = //user first name
-const userLast = //user last name
-const userEmail = //user email
-const userPhone = //user phone number
 
+//User Info
+const userFirst = document.querySelector('#user-first').value.trim();
+const userLast = document.querySelector('#user-last').value.trim();
+const userEmail = document.querySelector('#user-email').value.trim();
+const userPhone = document.querySelector('#user-phone').value.trim();
 //User Contact Section
 const userContactInfo = userFirst + " " + userLast + "\n" + userEmail + "\n" + userPhone
 
 
 
 //------------------------------ Event Listener Buttons ------------------------------//
+
 //Add & Create Buttons
 const addQuoteItemBtn = document.querySelector("#add-item");
 const createQuotePDFBtn = document.getElementById("#submit");
