@@ -24,7 +24,7 @@ const updateProfileFormHandler = async function (event) {
       if (response.ok) {
         console.log(response)
         // Reload the page to see updated information
-        alert('update has been made!!!')
+        alert('Profile information has been updated.')
         location.reload();
         
       } else {

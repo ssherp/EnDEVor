@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const serviceRoutes = require('./serviceRoutes');
+const serviceRoutesApi = require('./serviceRoutesApi');
 const quoteRoutes= require ('./quoteRoutes')
 const quoteItemRoutes= require ('./quoteItemRoutes')
 
 
 router.use('/users', userRoutes);
-router.use('/services',serviceRoutes);
+router.use('/services',serviceRoutesApi);
 router.use('/quotes',quoteRoutes);
 router.use('/quote_items',quoteItemRoutes);
 

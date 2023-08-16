@@ -19,7 +19,7 @@ Service.init(
       type: DataTypes.TEXT,
     },   
     service_price: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     user_id: {

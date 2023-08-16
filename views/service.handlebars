@@ -12,27 +12,29 @@
 			<section class="col">
 				<div class="row align-items-start">
 					<h1>Add Service</h1>
-
 					<form class="col" id="add-service-form">
 						<!-- Service -->
 						<h2>Service: </h2>
 						<div class="row">
 							<div class="col">
-								<input type="text" id="input-service-name" class="form-control" placeholder="Enter Service Name" aria-label="">
+								<label for="service_name"></label>
+								<textarea id="service_name" name="service_name" rows="2" cols="30">{{service_name}}</textarea>
 							</div>
 						</div>
 						<!-- Description -->
 						<h2>Description: </h2>
 						<div class="row">
 							<div class="col">
-								<input type="text" id="input-service-description" class="form-control" placeholder="Enter Description" aria-label="">
+								<label for="service_description"></label>
+								<textarea type="text" id="service_description" name="service_name" rows="4" cols="30">{{service_description}}</textarea>
 							</div>
 						</div>
 						<!-- Price -->				
 						<h2>Price: </h2>
 						<div class="row">
 							<div class="col">
-								<input type="number" id="input-service-price" class="service-description" placeholder="Enter Price" aria-label="">
+								<label for="service_price"></label>
+								<textarea type="text" id="service_price" name="service_price" rows="2" cols="30" >{{service_price}}</textarea>
 							</div>
 						</div>
 						<button type="submit" id="add-service-btn" class="btn btn-primary btn-lg">Add</button>
@@ -62,5 +64,5 @@
 		</div>
 	</main>
 	<!-- Add service form -->
-	<script src="/js/addServices.js"></script>
+	<script src="/js/service.js"></script>
 </body>

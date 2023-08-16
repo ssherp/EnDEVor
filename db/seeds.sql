@@ -6,11 +6,11 @@
 --        (005, "Simone", "de Beauvoir");
        
 INSERT INTO service (id, service_name, service_description, service_price, user_id)
-VALUES (001, "Service 1", "coffee", 200, null),
-       (002, "Service 2", "eggs", 200, null),
-       (003, "Service 3", "organic", 300, null),
-       (004, "WOooHOOOooO", "oranges", 400, null),
-       (005, "SLEEEEP", "ice cream", 500, null);
+VALUES ("Service 1", "Front-End Development", 100, 1),
+       ("Service 2", "Back-End Development", 150, 1),
+       ("Service 3", "Web-Site Design", 60, 1),
+       ("Service 4", "Functionality", 100, 1),
+       ("Service 5", "Setup Server", 80, 1);
 
 -- INSERT INTO quote ()
 -- VALUES ()
