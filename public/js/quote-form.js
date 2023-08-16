@@ -251,3 +251,25 @@ function createQuotePDF() {
     //Add to quotes
     addNewQuote();
 };
+
+
+
+const serviceNameSelect = document.getElementById('#serviceName');
+
+async function populateServiceDropdown() {
+  try {
+    const response = await fetch('/api/quote_items');
+    const quoteItems = await response.json();
+
+    quoteItems.forEach((quoteItem) => {
+      const option = document.createElement('option');
+      option.value = quoteItem.service_id;
+      option.textContent = `Quantity: ${quoteItem.quantity}, Service ID: ${quoteItem.service_id}`;
+      serviceNameSelect.appendChild(option);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+populateServiceDropdown();
