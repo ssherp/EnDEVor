@@ -1,0 +1,50 @@
+/*----- COLOR -----*/
+:root {
+    --dark: #272822;
+    --light: #F8F8F3;
+    --blue: #0D859A;
+    --lightOrange: #F08C01;
+    --orange: #E8580C;
+    --red: #E23230;
+
+}
+
+/*-------------------- DEFAULT CSS --------------------*/
+
+/*----- MAIN -----*/
+main {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----- HEADER -----*/
+h1 {
+    color: var(--blue);
+    font-size: 60px;
+    text-align: center;
+}
+
+/*----- FORM CARD -----*/
+.glass-bg {
+    background: rgba(255, 255, 255, 0.561);
+    backdrop-filter: saturate(180%) blur(10px);
+    width: 80%;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+
+/*----- PROJECT INFO -----*/
+h2 {
+    color: var(--orange);
+    font-size: 30px;
+    text-align: left;
+}
+
