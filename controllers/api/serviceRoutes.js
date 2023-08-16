@@ -1,17 +1,16 @@
 const router = require('express').Router();
-const { Service } = require('../../models');
+const { Service , User } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 //create new service to services list 
 router.post('/', async (req,res) => {
+	console.log(req)
 	try {
-		const serviceData = await Service.create({
-			service_name: req.body.service_name,
-			description: req.body.description,
-			price: req.body.price,
-			user_id: req.body.user_id
-		});
-		res.status(200).json(serviceData)
+		const serviceData = await Service.create(req.body);
+		for (const userId of req.body.user_id) {
+			await User.create(userId)
+		}
+		res.status(200).json(serviceData);
 	} catch (err) {
 		req.status(500).json(err);
 	} 
@@ -37,30 +36,27 @@ router.get ('/', withAuth, async (req, res) => {
 		const servicesData = await Service.findAll({
 			where: { user_id: req.session.user_id }
 		});
-		console.log(servicesData)
+
 		const services = servicesData.map((service) => service.get({ plain: true })) 
+		// res.render('service', {services})
 		res.status(200).json(services)
-		console.log(services) 
 		}
 	catch (err) { 
 		res.status(500).json(err);
 	}
 });
 
-/*potentially add this code instead of other models required.
-const servicesData = await Service.findAll({
-	include: [{ model: Service }], 
-}); 
-*/
-
 //GET single service
 router.get('/:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
+		const service = servicesData.get({ plain: true });
+
 		if (!servicesData) {
 			res.status(404).json({ message: 'No service found with this ID' });
 			return;
 		}
+		res.render('addService', { service })
 		res.status(200).json(servicesData);
 	} catch (err) {
 		res.status(500).json(err)
@@ -94,7 +90,8 @@ router.delete('/:id', async (req,res) => {
 		const servicesData = await Service.destroy({
 			where: {
 				id: req.params.id,
-			}})
+				user_id: req.session.user_id,
+			},})
 			if (!serviceData) {
 				res.status(404).json({ message: 'No service found with this ID' });
 				return;
@@ -107,3 +104,7 @@ router.delete('/:id', async (req,res) => {
 
 module.exports = router;
 
+		// ({
+		// 	...req.body,
+		// 	user_id: req.session.user_id
+		// });

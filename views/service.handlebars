@@ -1,0 +1,71 @@
+<!--iterate through all services and create, trying out partials -Aaron-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{{!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap" rel="stylesheet"> --}}
+	<link rel="stylesheet" href="css/quote-form.css">
+	<title>Services</title>
+</head>
+<body>
+	<main>
+		<div class="row">
+		<!--Add Service Form-->	
+			<section class="col">
+				<div class="row align-items-start">
+					<h1>Add Service</h1>
+
+					<form class="col" id="add-service-form">
+						<!-- Service -->
+						<h2>Service: </h2>
+						<div class="row">
+							<div class="col">
+								<input type="text" id="input-service-name" class="form-control" placeholder="Enter Service Name" aria-label="">
+							</div>
+						</div>
+						<!-- Description -->
+						<h2>Description: </h2>
+						<div class="row">
+							<div class="col">
+								<input type="text" id="input-service-description" class="form-control" placeholder="Enter Description" aria-label="">
+							</div>
+						</div>
+						<!-- Price -->				
+						<h2>Price: </h2>
+						<div class="row">
+							<div class="col">
+								<input type="number" id="input-service-price" class="service-description" placeholder="Enter Price" aria-label="">
+							</div>
+						</div>
+						<button type="submit" id="add-service-btn" class="btn btn-primary btn-lg">Add</button>
+					</form>
+				</div>
+			</section>
+
+			<!--Service List-->
+			<section class="col">
+				<h1>Services List</h1>
+				<div class="row align">
+					<form id="servicesList">
+			<!--handlebar renders each-->		
+						{{#each services as |service|}}
+						<div class="service-card">
+							<a href="/api/services/{{id}}"> 
+								<h2 id="service-name" class="text-danger">{{service_name}}<h2/>
+								<p id="service-price" class="text-white"><strong>{{service_price}}</strong></p>
+								<p id="service-description" class="text-warning">{{service_description}}</p>
+							</a>
+						</div>
+						{{/each}}
+						<button type="submit" id="edit-service-btn" class="btn btn-primary btn-lg">Edit<a href="/services/edit/"></a></button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- Add service form -->
+	<script src="/js/addServices.js"></script>
+</body>

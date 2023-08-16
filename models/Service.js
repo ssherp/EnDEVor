@@ -15,10 +15,10 @@ Service.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    service_description: {
       type: DataTypes.TEXT,
     },   
-    price: {
+    service_price: {
       type: DataTypes.FLOAT,
       allowNull: false,
     },
