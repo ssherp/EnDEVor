@@ -23,17 +23,13 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(/assets/other-background.webp);
-    background-size: cover;
-    background-position: center center;
 }
 
 /*----- GLASS BACKGROUND -----*/
 .glass-bg {
     background: rgba(255, 255, 255, 0.171);
     backdrop-filter: saturate(180%) blur(10px);
-    border: var(--blue) solid 3px;
-    width: 80%;
+    width: 90%;
     border-radius: 15px;
     margin-top: 10%;
     margin-bottom: 10%;
@@ -41,6 +37,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: var(--blue) solid 3px;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -52,54 +49,49 @@ main {
 
 /*----- WELCOME HEADER -----*/
 .logo {
-    outline: red dashed 2px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 h1 {
     color: var(--light);
-    font-size: 50px;
+    font-size: 80px;
     text-align: center;
-    font-family: var(--main);
     width: 100%;
     margin-left: 0;
-}
-
-.logo img {
-    width: auto;
-    height: 80px;
-    margin-right: 0;
+    font-family: var(--main);
 }
 
 /*----- GUIDE HEADER -----*/
 h2 {
-    color: var(--orange);
+    color: var(--lightOrange);
     font-size: 45px;
     text-align: center;
     margin: 20px;
-    font-family: var(--other);
+    font-family: var(--main);
 }
 
 h3 {
-    color: var(--red);
-    font-size: 45px;
+    color: var(--orange);
+    font-size: 25px;
     text-align: center;
     margin: 20px;
-    font-family: var(--other);
+    font-family: var(--main);
 }
 
 /*----- LINKS -----*/
 .all-links {
-    outline: blue dashed 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 20px;
 }
 
 .all-links button {
@@ -107,30 +99,30 @@ h3 {
     color: var(--red);
     border: var(--red) solid 3px;
     padding: 10px;
-    font-family: var(--other);
+    font-family: var(--main);
 }
 
 .all-links a {
     color: var(--red);
     font-size: 15px;
     text-decoration: none;
-    font-family: var(--other);
+    font-family: var(--main);
 }
 
 .top-links {
-    outline: green dashed 3px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    margin: 20px;
 }
 
 .bottom-links {
-    outline: purple dashed 3px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    margin: 20px;
 }
