@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api/index');
 const homeRoutes = require('./homeRoutes');
-const servicesRoutes = require('./servicesRoutes');
+const servicesRoutes = require('./addServiceRoutes');
 const editServiceRoutes = require('./editServiceRoutes');
 const quoteFormRoutes = require('./quoteFormRoutes');
 const quoteFileRoutes = require('./quoteFileRoutes');
@@ -15,8 +15,8 @@ router.use('/services', servicesRoutes);
 router.use('/services/edit', editServiceRoutes);
 // profile route -> when does user fill this out?
 // quote routes
-router.use('/quote_form', quoteFormRoutes);
-router.use('/quote_file', quoteFileRoutes);
+router.use('/quote-form', quoteFormRoutes);
+router.use('/quote-file', quoteFileRoutes);
 
 
 module.exports = router;

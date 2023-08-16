@@ -12,16 +12,18 @@ async function servicesListHandler(event) {
 			service_name,
 			description,
 			service_price,
+			user_id,
 		}),
-		headers: { 'Content-Type': 'services/json' },
+		headers: { 'Content-Type': 'services/json' }
 	})
-	if (response.ok) {
-		document.location.replace('/services/');
-	} else {
-		alert('Failed to add service');
-	}
+	.then(response => response.json(data))
+	.then(data =>console.log(data));
+	// if (response.ok) 
+	// 	document.location.replace('/services/');
+	// else {
+	// 	alert('Failed to add service');
+	// }
 }
-
 async function editServiceRoute()
 
 document.querySelector('services-list').addEventListener('submit', servicesListHandler)

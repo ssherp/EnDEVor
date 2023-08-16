@@ -6,12 +6,38 @@
 	<title>Services</title>
 </head>
 <body>
-	<div class="container">
-		<section class="row col-6 align-self-start">
+	<section class="row container-lg col-6">
+		<div class="row align-items-start">
+			<h1>Add Service</h1>
+			<form class="col">
+				<h2>Service: </h2>
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Enter Service Name" aria-label="Project name" id="add-service-input">
+					</div>
+				</div>
+				<h2>Description: </h2>
+				<div class="row">
+					<!-- First Name -->
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Enter Service Description" aria-label="First name" id="user-first">
+					</div>
+				</div>
+				<h2>Price: </h2>
+				<div class="row">
+					<div class="col">
+						<input type="number" class="form-control" placeholder="Enter Price" aria-label="Project name">
+					</div>
+				</div>
+				<button type="submit" id="add-service-btn" class="btn btn-primary">Add</button>
+			</form>
+		</div>
+	</section>
+	<section class="row container-lg col-6">
+		<h1>Services List</h1>
+		<div class="row align">
 			<form id="services-list">
-				<header class="text-center">Services</header>
-				<!--Consider turning div into clickable button to add service as a quote-item-->
-				{{#each services as |service|}}alignment
+				{{#each services as |service|}}
 				<div class="service-card">
 					<a href="services/{{id}}"> 
 						<header id="service-name" class="text-danger">{{service_name}}</header>
@@ -20,14 +46,10 @@
 					</a>
 				</div>
 				{{/each}}
-				<button type="submit" id="add-service-btn" class="btn btn-primary">Add</button>
+				<button type="submit" id="edit-service-btn" class="btn btn-primary">Edit<a href="/services/edit/"></a></button>
 			</form>
-			<form>
-				<button type="submit" id="edit-service-btn" class="btn btn-primary">
-					<a class="nav-link" href="/services/edit/">Edit</a>
-				</button>
-			</form>
-		</section>
-	</div>
+		</div>
+	</section>
+	<!-- Add service form -->
 	<script src="/js/addServices.js"></script>
 </body>
