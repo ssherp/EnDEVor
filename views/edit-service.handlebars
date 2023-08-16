@@ -1,22 +1,29 @@
-	<!--Edit Section-->
-	<section id="edit-service" class="row col-6 align-items-end">
-		<!--Edit -->
-		<header>Edit</header>
-		<!--Edit Form-->
-		<div class="edit-service-container">
-			<form id="edit-service-form">
-				<!--Service Name Input-->
-				<label for="edit-service-name">Name: </label>
-				<textarea type="text" id="edit-service-name" name="edit-service-name"></textarea>
-				<!--Service Description Input-->
-				<label for="edit-service-description">Includes: </label>
-				<textarea type="text" id="edit-service-description" name="edit-name"><br><br></textarea>
-				<!--Service Price Input-->
-				<label for="edit-service-price">Price: </label>
-				<textarea type="text" id="edit-service-price" name="edit-service-price"></textarea>
-				<!--Buttons below, will need to get value of input for name, description, price-->
-				<button id="save-button" class="text-danger">Save</button>
-				<button id="delete-button" class="text-danger">Delete</button>
-			</form>
-		</div>
-	</section>
+<!--Edit Section-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/quote-form.css">
+	<title>Services</title>
+</head>
+<section id="edit-service" class="row col-6 align-items-end">
+	<!--Edit -->
+	<header>Edit</header>
+	<!--Edit Form-->
+	<div class="edit-service-container">
+		<form id="edit-service-form">
+			<!--Service Name Input-->
+			<label for="edit-service-name">Name: </label>
+			<textarea type="text" id="edit-service-name" name="edit-service-name"></textarea>
+			<!--Service Description Input-->
+			<label for="edit-service-description">Includes: </label>
+			<textarea type="text" id="edit-service-description" name="edit-name"><br><br></textarea>
+			<!--Service Price Input-->
+			<label for="edit-service-price">Price: </label>
+			<textarea type="text" id="edit-service-price" name="edit-service-price"></textarea>
+			<!--Buttons below, will need to get value of input for name, description, price-->
+			<button id="save-button" class="text-danger">Save</button>
+			<div><button id="delete-button" class="text-danger">Delete</button></div>
+		</form>
+	</div>
+	<script src="/js/editService.js"></script>
+</section>
