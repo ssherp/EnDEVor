@@ -41,7 +41,7 @@ User.init(
       allowNull: true,
     },
     zip: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     email: {
@@ -53,7 +53,7 @@ User.init(
       },
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     password: {

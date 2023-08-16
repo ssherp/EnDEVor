@@ -1,19 +1,33 @@
 <!--iterate through all services and create, trying out partials -Aaron-->
-<div class="container">
-	<section id="services-list" class="row col-6 align-self-start">
-		<form>
-			<header class="text-center">Services</header>
-			<!--Consider turning div into clickable button to add service as a quote-item-->
-			<div class="service-card">
-				<p>
-					{{#each services as |service|}}alignment
-					{{> services-details}} <!--check partials-->
-					{{/each}}
-				</p>
-			</div>
-			<button id="serviceAddBtn">Add</button>
-		</form>
-	</section>
-
-</div>
-<script src="/js/services.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/quote-form.css">
+	<title>Services</title>
+</head>
+<body>
+	<div class="container">
+		<section class="row col-6 align-self-start">
+			<form id="services-list">
+				<header class="text-center">Services</header>
+				<!--Consider turning div into clickable button to add service as a quote-item-->
+				{{#each services as |service|}}alignment
+				<div class="service-card">
+					<a href="services/{{id}}"> 
+						<header id="service-name" class="text-danger">{{service_name}}</header>
+						<h2 id="service-price" class="text-white"><strong>{{price}}</strong></h2>
+						<p id="service-description" class="text-warning">{{description}}</p>
+					</a>
+				</div>
+				{{/each}}
+				<button type="submit" id="add-service-btn" class="btn btn-primary">Add</button>
+			</form>
+			<form>
+				<button type="submit" id="edit-service-btn" class="btn btn-primary">
+					<a class="nav-link" href="/services/edit/">Edit</a>
+				</button>
+			</form>
+		</section>
+	</div>
+	<script src="/js/addServices.js"></script>
+</body>

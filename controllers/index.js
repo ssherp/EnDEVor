@@ -1,16 +1,15 @@
 const router = require('express').Router();
 
-const apiRoutes = require('./api');
+const apiRoutes = require('./api/index');
 const homeRoutes = require('./homeRoutes');
 const servicesRoutes = require('./servicesRoutes');
 const editServiceRoutes = require('./editServiceRoutes');
 const quoteFormRoutes = require('./quoteFormRoutes');
 const quoteFileRoutes = require('./quoteFileRoutes');
-
-
+ 
 //Not sure if different files are necessary
-router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 // services routes
 router.use('/services', servicesRoutes);
 router.use('/services/edit', editServiceRoutes);
