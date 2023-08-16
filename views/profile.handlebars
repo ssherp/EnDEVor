@@ -1,4 +1,14 @@
+
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- CSS Link -->
+<link rel="stylesheet" href="css/profile.css">
+
 {{#if logged_in}}
+<main>
+  <h1>
   <h2>Edit Profile</h2>
   
   <form id="update-profile-form">
@@ -40,9 +50,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
-
+</h1>
   <script src="js/profile.js"></script>
- 
+ </main>
 {{else}}
   <p>Please log in to view your profile.</p>
 {{/if}}
