@@ -65,19 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to populate select dropdown with services
     async function populateDropdown() {
-      try {
-        const response = await fetch('/api/services');
-        const services = await response.json();
+        try {
+            const response = await fetch('/api/services');
+            const services = await response.json();
 
-        for (const service of services) {
-          const option = document.createElement('option');
-          option.value = service.id;
-          option.textContent = service.name + "\n" + service.price;
-          selectElement.appendChild(option);
+            for (const service of services) {
+                const option = document.createElement('option');
+                option.value = service.id;
+                option.textContent = service.name + "\n" + service.price;
+                selectElement.appendChild(option);
+            }
+        } catch (error) {
+            console.error(error);
         }
-      } catch (error) {
-        console.error(error);
-      }
     }
 
     populateDropdown();
@@ -115,6 +115,48 @@ function addQuoteItem() {
 };
 
 
+
+//------------------------------ Add Total Price ------------------------------//
+
+//write a function that adds the total price
+
+
+//------------------------------ Create the Quote POST ------------------------------//
+
+async function addNewQuote(event) {
+    event.preventDefault();
+
+    // Sending response to add new quote
+    const response = await fetch(`/api/quotes`, {
+        method: 'POST',
+        body: JSON.stringify({
+            project_title,
+            project_due_date,
+            userFirst,
+            userLast,
+            userEmail,
+            userPhone,
+            client_first,
+            client_last,
+            client_email,
+            client_phone,
+            client_address,
+            client_address_2,
+            client_city,
+            client_state,
+            client_zip,
+            quote_items,
+            total_price,
+            notes
+        }),
+        headers: { 'Content-Type': 'quotes/json' },
+    })
+    if (response.ok) {
+        document.location.replace('/');
+    } else {
+        alert('Failed to add service');
+    }
+}
 
 //------------------------------ Create the PDF ------------------------------//
 
@@ -184,6 +226,14 @@ function createQuotePDF() {
         });
     doc.moveDown(1);
 
+    //Total Price
+    doc
+        .font('Helvetica Bold', 12)
+        .text('Total: ' + totalPrice, {
+            align: right
+        });
+    doc.moveDown(1);
+
     //Notes
     doc
         .font('Helvetica Bold', 16)
@@ -197,4 +247,7 @@ function createQuotePDF() {
 
     //End PDF Stream
     doc.end();
+
+    //Add to quotes
+    addNewQuote();
 };

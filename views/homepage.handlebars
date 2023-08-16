@@ -1,29 +1,44 @@
-
-    <div>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/quote_form">Create Quote</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="/services">Manage Services</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/view-quote">View Quote</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/profile">Profile</a>
-            </li>
-
-            <li class="nav-item">
-                {{#if logged_in}}
-                <button class="nav-link" id="logout">Logout</button>
-                {{else}}
-                <a class="nav-link" href="/login">Login</a>
-                {{/if}}
-            </li>
-        </ul>
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap"
+    rel="stylesheet">
+<!-- CSS Link -->
+<link rel="stylesheet" href="/css/homepage.css">
+<!-- Main Body -->
+<main>
+    <!-- "Glass" Background -->
+    <div class="glass-bg">
+        <div class="logo">
+            <h1>enDEVors</h1><img src="/assets/technology.png">
+        </div>
+        <!-- Headers -->
+        <header>
+            <h2>Welcome!</h2>
+            <h3>What can we help you with today?</h3>
+        </header>
+        <!-- Site Links -->
+        <section class="all-links">
+            <div class="top-links">
+                <!-- Create Quote Link -->
+                <button><a class="create-quote" href="/quote-form">Create Quote</a></button>
+                <!-- Manage Services Link -->
+                <button><a class="manage-services" href="/service">Manage Services</a></button>
+            </div>
+            <div class="bottom-links">
+                <!-- Edit Profile Link -->
+                <button><a class="edit-profile" href="/profile">Profile</a></button>
+                <!-- Logout -->
+                <div class="login">
+                    {{#if logged_in}}
+                    <button class="log-out" id="logout">Log Out</button>
+                    {{else}}
+                    <a class="login" href="/login">Log In</a>
+                    {{/if}}
+                </div>
+            </div>
+        </section>
     </div>
 </main>
-
+<!-- JS Link -->
+<script src="/js/homepage.js"></script>
