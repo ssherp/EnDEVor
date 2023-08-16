@@ -21,10 +21,22 @@ Quote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // service_ordered: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    userFirst: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    userLast: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    userEmail: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    userPhone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }, 
     client_first: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -33,11 +45,19 @@ Quote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    client_company: {
+    client_email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    client_phone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }, 
+    client_address: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    client_address: {
+    client_address_2: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -53,14 +73,10 @@ Quote.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    client_email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    client_phone: {
-      type: DataTypes.STRING,
+    total_price: {
+      type: DataTypes.FLOAT,
       allowNull: true,
-    }, 
+    },
     notes: {
       type: DataTypes.STRING,
       allowNull: true,
