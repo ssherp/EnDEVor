@@ -6,166 +6,196 @@
 <link rel="stylesheet" href="/css/quote-form.css">
 <!-- Main Body -->
 <main>
+    <!-- Nav Bar -->
+    <nav class="main-nav">
+        <ul>
+            <li>enDEVors</li>
+            <li><a href="/homepage">home</a></li>
+            <li><a href="/profile">profile</a></li>
+            <li><a href="/services">services</a></li>
+            <li><a href="/quote_form">quotes</a></li>
+        </ul>
+    </nav>
     <header>
         <h1>
             Create Quote
         </h1>
     </header>
+    <!-- "Glass" Background -->
     <section class="glass-bg">
         <!-- Quote Form -->
-        <form>
+        <form id="create-quote-form">
             <!-- Project -->
             <h2>Project</h2>
-            <div class="row">
+            <div class="project-info">
                 <!-- Project Title -->
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Project name" aria-label="Project name"
-                        id="project-title">
+                <div class="title">
+                    <label for="project-title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="project-title">
                 </div>
                 <!-- Date -->
-                <div class="col">
+                <div>
+                    <label for="project-due-date" class="form-label">Est. Completion</label>
                     <input type="date" class="form-control" placeholder="mm/dd/yyyy" id="project-due-date">
                 </div>
             </div>
             <!-- Developer Info -->
             <h2>Developer</h2>
-            <div class="row">
-                <!-- First Name -->
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name"
-                        id="user-first">
+            <section class="dev-info">
+                <div class="dev-name">
+                    <!-- First Name -->
+                    <div>
+                        <label for="user-first" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="user-first">
+                    </div>
+                    <!-- Last Name -->
+                    <div>
+                        <label for="user-last" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="user-last">
+                    </div>
                 </div>
-                <!-- Last Name -->
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
-                        id="user-last">
+                <div>
+                    <!-- Email -->
+                    <div>
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="user-email">
+                    </div>
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="formGroupExampleInput" class="form-label">Phone Number</label>
+                        <input type="number" class="form-control" id="user-phone">
+                    </div>
                 </div>
-            </div>
-            <!-- Email -->
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="user-email">
-            </div>
-            <!-- Phone Number -->
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" id="user-phone">
-            </div>
+            </section>
             <!-- Client Info -->
             <h2>Client Info</h2>
-            <div class="row">
-                <!-- First Name -->
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name"
-                        id="client-first">
+            <section class="client-info">
+                <div class="client-name">
+                    <!-- First Name -->
+                    <div>
+                        <label for="client-first" class="form-label">First Name</label>
+                        <input type="text" class="form-control" aria-label="First name" id="client-first">
+                    </div>
+                    <!-- Last Name -->
+                    <div>
+                        <label for="client-last" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" aria-label="Last name" id="client-last">
+                    </div>
                 </div>
-                <!-- Last Name -->
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
-                        id="client-last">
+                <div class="client-contact">
+                    <!-- Email -->
+                    <div>
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="formGroupExampleInput" class="form-label">Phone Number</label>
+                        <input type="number" class="form-control" id="formGroupExampleInput">
+                    </div>
                 </div>
-            </div>
-            <!-- Email -->
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <!-- Phone Number -->
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" id="formGroupExampleInput">
-            </div>
-            <!-- Address -->
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <!-- Address 2 -->
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <!-- City -->
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <!-- State -->
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>AL</option>
-                    <option>AK</option>
-                    <option>AZ</option>
-                    <option>AR</option>
-                    <option>AS</option>
-                    <option>CA</option>
-                    <option>CO</option>
-                    <option>CT</option>
-                    <option>DE</option>
-                    <option>DC</option>
-                    <option>FL</option>
-                    <option>GA</option>
-                    <option>HI</option>
-                    <option>ID</option>
-                    <option>IL</option>
-                    <option>IN</option>
-                    <option>IA</option>
-                    <option>KS</option>
-                    <option>KY</option>
-                    <option>LA</option>
-                    <option>ME</option>
-                    <option>MD</option>
-                    <option>MA</option>
-                    <option>MI</option>
-                    <option>MN</option>
-                    <option>MS</option>
-                    <option>MO</option>
-                    <option>MT</option>
-                    <option>NE</option>
-                    <option>NV</option>
-                    <option>NH</option>
-                    <option>NJ</option>
-                    <option>NM</option>
-                    <option>NY</option>
-                    <option>NC</option>
-                    <option>ND</option>
-                    <option>OH</option>
-                    <option>OK</option>
-                    <option>OR</option>
-                    <option>PA</option>
-                    <option>RI</option>
-                    <option>SC</option>
-                    <option>SD</option>
-                    <option>TN</option>
-                    <option>TX</option>
-                    <option>UT</option>
-                    <option>VT</option>
-                    <option>VA</option>
-                    <option>WA</option>
-                    <option>WV</option>
-                    <option>WI</option>
-                    <option>WY</option>
-                </select>
-            </div>
-            <!-- Zip -->
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-
+                <div class="client-address">
+                    <!-- Address -->
+                    <div>
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                    </div>
+                    <!-- Address 2 -->
+                    <div>
+                        <label for="inputAddress2" class="form-label">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2">
+                    </div>
+                </div>
+                <div class="client-city">
+                    <!-- City -->
+                    <div>
+                        <label for="inputCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <!-- State -->
+                    <div>
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>Select</option>
+                            <option>AL</option>
+                            <option>AK</option>
+                            <option>AZ</option>
+                            <option>AR</option>
+                            <option>AS</option>
+                            <option>CA</option>
+                            <option>CO</option>
+                            <option>CT</option>
+                            <option>DE</option>
+                            <option>DC</option>
+                            <option>FL</option>
+                            <option>GA</option>
+                            <option>HI</option>
+                            <option>ID</option>
+                            <option>IL</option>
+                            <option>IN</option>
+                            <option>IA</option>
+                            <option>KS</option>
+                            <option>KY</option>
+                            <option>LA</option>
+                            <option>ME</option>
+                            <option>MD</option>
+                            <option>MA</option>
+                            <option>MI</option>
+                            <option>MN</option>
+                            <option>MS</option>
+                            <option>MO</option>
+                            <option>MT</option>
+                            <option>NE</option>
+                            <option>NV</option>
+                            <option>NH</option>
+                            <option>NJ</option>
+                            <option>NM</option>
+                            <option>NY</option>
+                            <option>NC</option>
+                            <option>ND</option>
+                            <option>OH</option>
+                            <option>OK</option>
+                            <option>OR</option>
+                            <option>PA</option>
+                            <option>RI</option>
+                            <option>SC</option>
+                            <option>SD</option>
+                            <option>TN</option>
+                            <option>TX</option>
+                            <option>UT</option>
+                            <option>VT</option>
+                            <option>VA</option>
+                            <option>WA</option>
+                            <option>WV</option>
+                            <option>WI</option>
+                            <option>WY</option>
+                        </select>
+                    </div>
+                    <!-- Zip -->
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                </div>
+            </section>
             <!-- Order Info -->
             <h2>Order Info</h2>
+
             <div id="service-item">
-                <label for="itemQuantity">Qty:</label>
-                <input type="number" id="itemQuantity" name="itemQuantity" value="1" required>
-                <label for="itemQuantity">Service:</label>
-                <select class="form-select" aria-label="Choose a service" id="serviceName">
-                    <option selected>Choose a service</option>
-                </select>
-                <button id="add-item" type="submit">Add Item</button>
+                <div class="item-qty">
+                    <label for="itemQuantity">Qty:</label>
+                    <input type="number" class="form-control" id="itemQuantity" value="1" required>
+                </div>
+                <div class="item-type">
+                    <label for="serviceName">Service:</label>
+                    <select class="form-select" aria-label="Choose a service" id="serviceName">
+                        <option selected>Choose a service</option>
+                    </select>
+                </div>
             </div>
+            <section class="order">
+                <button id="add-item" type="submit">Add Item</button>
+            </section>
             <!-- Notes -->
             <h2>Notes</h2>
             <div class="form-floating">
@@ -173,7 +203,9 @@
                 <label for="floatingTextarea2">Notes</label>
             </div>
             <!-- Submit Button -->
-            <button id="submit" type="submit">Create</button>
+            <div class="pdf-submit">
+                <button id="submit" type="submit">Create</button>
+            </div>
         </form>
     </section>
 </main>
