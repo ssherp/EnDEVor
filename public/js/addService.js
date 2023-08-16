@@ -10,9 +10,9 @@ const addServiceBtn = document.getElementById('add-service-btn');
 async function addServicePost(event) {
 	event.preventDefault();
 
-	const serviceName = document.getElementById('post-service-name').value.trim();
-	const serviceDescription = document.getElementById('post-service-description').value.trim();
-	const servicePrice = document.getElementById('post-service-price').value.trim();
+	const serviceName = document.getElementById('service_name').value.trim();
+	const serviceDescription = document.getElementById('service_description').value.trim();
+	const servicePrice = document.getElementById('service_price').value.trim();
 	const response = await fetch('/api/services', {
 			method: 'POST',
 			body: JSON.stringify({ serviceName, serviceDescription, servicePrice }),
