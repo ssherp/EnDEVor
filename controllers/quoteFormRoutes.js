@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Service, User , Quote , Quote_Item , } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/quote_form', withAuth, async (req, res)=>{
+router.get('/', withAuth, async (req, res)=>{
 	try{
 		 res.render('quote-form', { 
 			logged_in: req.session.logged_in 

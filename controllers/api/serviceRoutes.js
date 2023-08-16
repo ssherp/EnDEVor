@@ -13,8 +13,7 @@ router.post('/', async (req,res) => {
 		});
 		res.status(200).json(serviceData)
 	} catch (err) {
-		console.log(err)
-		res.status(400).json(err);
+		req.status(500).json(err);
 	} 
 });
 
@@ -27,26 +26,26 @@ router.get ('/',  async (req, res) => {
 		res.status(200).json(services)
 		console.log(services) 
 		}
-	catch { 
+	catch (err) { 
 		res.status(500).json(err);
 	}
 });
 
-// //GET all services for logged-in user
-// router.get ('/', withAuth, async (req, res) => {
-// 	try {
-// 		const servicesData = await Service.findAll({
-// 			where: { user_id: req.session.user_id }
-// 		});
-// 		console.log(servicesData)
-// 		const services = servicesData.map((service) => service.get({ plain: true })) 
-// 		res.status(200).json(services)
-// 		console.log(services) 
-// 		}
-// 	catch { 
-// 		res.status(500).json(err);
-// 	}
-// });
+//GET all services for logged-in user
+router.get ('/', withAuth, async (req, res) => {
+	try {
+		const servicesData = await Service.findAll({
+			where: { user_id: req.session.user_id }
+		});
+		console.log(servicesData)
+		const services = servicesData.map((service) => service.get({ plain: true })) 
+		res.status(200).json(services)
+		console.log(services) 
+		}
+	catch (err) { 
+		res.status(500).json(err);
+	}
+});
 
 /*potentially add this code instead of other models required.
 const servicesData = await Service.findAll({
@@ -63,8 +62,8 @@ router.get('./:id', async (req, res) => {
 			return;
 		}
 		res.status(200).json(servicesData);
-	} catch {
-		res.status(400).json(err)
+	} catch (err) {
+		res.status(500).json(err)
 	 }
 });
 
@@ -84,8 +83,8 @@ router.put('/:id', async (req,res) => {
 		}
 	);
 		res.status(200).json(serviceUpdate)
-	} catch {
-		res.status(400).json(err);
+	} catch (err) {
+		res.status(500).json(err);
 	}
 }); 
 
@@ -101,8 +100,8 @@ router.delete('./:id', async (req,res) => {
 				return;
 			}
 			res.status(200).json(servicesData);
-		} catch {
-			res.status(400).json(err);
+		} catch (err) {
+			res.status(500).json(err);
 		}
 });
 
