@@ -39,12 +39,7 @@ h1 {
     margin-bottom: 10%;
 }
 
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .glass-bg {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-    }
-}
+
 
 /*----- PROJECT INFO -----*/
 h2 {
