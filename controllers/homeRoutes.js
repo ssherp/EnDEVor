@@ -23,24 +23,19 @@ router.get('/homepage', withAuth, async (req, res)=>{
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Fetch the user data from the database using the user_id stored in the session
-    const userData = await User.findByPk({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+    const userData = await User.findByPk(req.session.user_id);
     if (!userData) {
       res.status(404).json({ message: 'User not found' });
       return;
     }
 
     // Serialize user data for the template
-    const serializedUserData = userData.map((data) => data.get({ plain: true }));
+    const serializedUserData =userData.get({ plain: true });
 
     // Render the profile template and pass the serialized user data
     res.render('profile', {
-      ...serializedUserData,
-      logged_in: true,
+      serializedUserData,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.error(err)
