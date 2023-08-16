@@ -235,3 +235,8 @@ h2 {
     font-family: var(--main);
     margin-top: 15px;
 }
+
+.pdf-submit button a {
+    color: var(--red);
+    text-decoration: none;
+}
