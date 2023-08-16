@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', ()=> {
+
+
 //using submit event listener, all changes will be at click of button in function.
 async function addServiceHandler(event) {
 	event.preventDefault();
@@ -19,9 +22,8 @@ async function addServiceHandler(event) {
 		if (response.ok) 
 			document.location.replace('/')
 		else {
-
 			alert('Failed to add service');
-		}
+		} 
 	}
 };
 
@@ -29,9 +31,9 @@ async function addServiceHandler(event) {
 document
 	.querySelector('services-list')
 	.addEventListener('submit', addServiceHandler)
-document.getElementById('#edit-service-btn').addEventListener('click', editServiceRoute)
 
 
+})
 //saw headers on link below
 //refresher on fetch https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 //refresher https://handlebarsjs.com/installation/#usage

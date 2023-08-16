@@ -8,17 +8,24 @@
 <section id="edit-service" class="row col-6 align-items-end">
 	<!--Edit -->
 	<header><h1>Edit Services</h1></header>
+	<!--Select Service-->
+	<label for="service-select">Choose a service:</label>
+	<select id="service-select">
+		{{#each services as |service| }}
+		<option value="{{id}}">{{service_name}}</option>
+		{{/each}}
+	</select>
 	<!--Edit Form-->
 	<div class="edit-service-container">
 		<form id="edit-service-form">
 			<!--Service Name Input-->
-			<label for="edit-service-name">Name: </label>
+			<label for="edit-service-name">Name: {{service_name}} </label>
 			<textarea type="text" id="edit-service-name" name="edit-service-name"></textarea>
 			<!--Service Description Input-->
-			<label for="edit-service-description">Includes: </label>
+			<label for="edit-service-description">Includes: {{service_description}}</label>
 			<textarea type="text" id="edit-service-description" name="edit-name"><br><br></textarea>
 			<!--Service Price Input-->
-			<label for="edit-service-price">Price: </label>
+			<label for="edit-service-price">Price: {{service_price}}</label>
 			<textarea type="text" id="edit-service-price" name="edit-service-price"></textarea>
 			<!--Buttons below, will need to get value of input for name, description, price-->
 			<button id="save-button" class="text-danger">Save</button>

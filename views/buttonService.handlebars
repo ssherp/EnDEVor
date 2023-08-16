@@ -42,21 +42,22 @@
 				</div>
 			</section>
 
-			<!---->
+			<!--Service List-->
 			<section class="col">
 				<h1>Services List</h1>
 				<div class="row align">
-					<form id="servicesList">
-						{{#each services as |service|}}
-						<div class="service-card">
-							<a href="services/{{id}}"> 
-								<header id="service-name" class="text-danger">{{service_name}}</header>
-								<h2 id="service-price" class="text-white"><strong>{{price}}</strong></h2>
-								<p id="service-description" class="text-warning">{{description}}</p>
-							</a>
-						</div>
-						{{/each}}
-						<button type="submit" id="edit-service-btn" class="btn btn-primary btn-lg">Edit<a href="/services/edit/"></a></button>
+			<!--handlebar renders each-->		
+					{{#each services as |service|}}
+					<div class="service-card">
+						<button id="edit-service-btn" value="{{ id }}">
+							<a href="services/{{id}}"></a>
+							<h2 id="service-name" class="text-danger">{{service_name}}<h2/>
+							<p id="service-price" class="text-white"><strong>{{service_price}}</strong></p>
+							<p id="service-description" class="text-warning">{{service_description}}</p>
+						</button>
+					</div>
+					{{/each}}
+					<button type="submit" id="edit-service-btn" class="btn btn-primary btn-lg">Edit<a href="/services/edit/"></a></button>
 					</form>
 				</div>
 			</section>

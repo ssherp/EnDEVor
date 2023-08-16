@@ -35,30 +35,27 @@ router.get ('/', withAuth, async (req, res) => {
 		const servicesData = await Service.findAll({
 			where: { user_id: req.session.user_id }
 		});
-		console.log(servicesData)
+
 		const services = servicesData.map((service) => service.get({ plain: true })) 
-		res.status(200).json(services)
-		console.log(services) 
+		res.render('addService', {services})
+		res.status(200).json(servicesData)
 		}
 	catch (err) { 
 		res.status(500).json(err);
 	}
 });
 
-/*potentially add this code instead of other models required.
-const servicesData = await Service.findAll({
-	include: [{ model: Service }], 
-}); 
-*/
-
 //GET single service
 router.get('/:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
+		const service = servicesData.get({ plain: true });
+
 		if (!servicesData) {
 			res.status(404).json({ message: 'No service found with this ID' });
 			return;
 		}
+		res.render('editService', { service })
 		res.status(200).json(servicesData);
 	} catch (err) {
 		res.status(500).json(err)
@@ -92,7 +89,8 @@ router.delete('/:id', async (req,res) => {
 		const servicesData = await Service.destroy({
 			where: {
 				id: req.params.id,
-			}})
+				user_id: req.session.user_id,
+			},})
 			if (!serviceData) {
 				res.status(404).json({ message: 'No service found with this ID' });
 				return;
