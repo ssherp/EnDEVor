@@ -54,7 +54,7 @@ const servicesData = await Service.findAll({
 */
 
 //GET single service
-router.get('./:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
 		if (!servicesData) {
@@ -89,7 +89,7 @@ router.put('/:id', async (req,res) => {
 }); 
 
 //delete method but id, services id placeholder for future services database pathway
-router.delete('./:id', async (req,res) => {
+router.delete('/:id', async (req,res) => {
 	try {
 		const servicesData = await Service.destroy({
 			where: {
