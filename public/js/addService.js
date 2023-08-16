@@ -2,11 +2,11 @@
 async function servicesListHandler(event) {
 	event.preventDefault();
 	//grab all html names from partials, used service_name so name doesn't have line through it
-	const service_name = document.querySelector('#service-name').value;
-	const description = document.querySelector('#service-price').value;
-	const service_price = document.querySelector('#service-description').value
+	const service_name = document.querySelector('#service-name').value.trim();
+	const description = document.querySelector('#service-price').value.trim();
+	const service_price = document.querySelector('#service-description').value.trim();
 	// Sending response to add new service
-	const response = await fetch (`/api/services`, {
+	const response = await fetch (`/api/services/`, {
 		method: 'POST',
 		body: JSON.stringify({
 			service_name,
@@ -16,13 +16,16 @@ async function servicesListHandler(event) {
 		headers: { 'Content-Type': 'services/json' },
 	})
 	if (response.ok) {
-		document.location.replace('/');
+		document.location.replace('/services/');
 	} else {
 		alert('Failed to add service');
 	}
 }
 
-document.querySelector('services-list').addEventListener('submit', servicesListHandler);
+async function editServiceRoute()
+
+document.querySelector('services-list').addEventListener('submit', servicesListHandler)
+document.getElementById('#edit-service-btn').addEventListener('click', editServiceRoute)
 
 
 //saw headers on link below

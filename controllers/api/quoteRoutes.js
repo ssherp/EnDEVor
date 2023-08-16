@@ -39,8 +39,6 @@ router.get('/:id', async (req, res) => {
     const quoteData = await quoteId.findByPk(quoteId);
 
         if (!quoteData) {
-   
-
              res.status(404).json({ message: 'Quote not found!' });
             return;
         }
