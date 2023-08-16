@@ -44,8 +44,12 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-router.get('/pizza', (req,res) => {
-  res.render('quote-file');
-})  
   
+ //home route to view pdf
+ router.get('/quote-file', (req, res) => {
+  res.render('quote-file', { 
+    logged_in: req.session.logged_in 
+  });
+});
+
 module.exports = router
