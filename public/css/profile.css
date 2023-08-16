@@ -1,4 +1,4 @@
-/*----- COLOR -----*/
+/*----- COLOR & FONTS -----*/
 :root {
     --dark: #272822;
     --light: #F8F8F3;
@@ -6,10 +6,42 @@
     --lightOrange: #F08C01;
     --orange: #E8580C;
     --red: #E23230;
-
+    --main: 'Press Start 2P', cursive;
+    --other: 'Source Code Pro', monospace;
 }
 
 /*-------------------- DEFAULT CSS --------------------*/
+/*------------- NAV -------------*/
+.main-nav {
+    position: fixed;
+    top: 0;
+    background-color: #9c0b0600;
+    border-bottom: var(--blue) solid 3px;
+    width: 100%;
+    z-index: 30;
+    font-family: var(--main);
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    list-style: none;
+    font-family: var(--extra);
+    font-size: 15px;
+}
+
+.main-nav li {
+    color: var(--light);
+}
+
+.main-nav li a {
+    color: var(--blue);
+    text-decoration: none;
+}
 
 /*----- MAIN -----*/
 main {
@@ -20,28 +52,94 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-#update-profile-form {
-    color: var(--red);  
+/*----- GLASS BACKGROUND -----*/
+.glass-bg {
+    background: rgba(255, 255, 255, 0.171);
+    backdrop-filter: saturate(180%) blur(10px);
+    width: 90%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--blue) solid 3px;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .glass-bg {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/*----- HEADER -----*/
+h1 {
+    color: var(--blue);
+    font-size: 45px;
     text-align: center;
+    font-family: var(--main);
 }
 
-
-.form-label {
-    background: rgba(3, 7, 238, 0.932);
-    width: 60%;
-    border-radius: 10px;
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-.card-body {
-    background-color:gold;      
+/*----- FORM -----*/
+#update-profile-form {
+    margin: 10px;
+    width: 90%;
 }
 
-h2 {
-    color: var(--orange);
-    font-size: 50px;
-    text-align: left;
+/*----- FORM BUTTON -----*/
+.btn-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.update-btn {
+    border: var(--red) solid 2px;
+    background-color: var(--dark);
+    color: var(--red);
+    font-family: var(--main);
+    padding: 10px;
+    font-size: 20px;
+    width: 200px;
+    margin: 10px;
+}
+
+/*----- NAME -----*/
+.profile-name {
+    font-family: var(--main);
+    color: var(--lightOrange);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/*----- COMPANY & ADDRESS -----*/
+.company-address {
+    font-family: var(--main);
+    color: var(--lightOrange);
+    margin-top: 15px;
+}
+
+/*----- CITY STATE & ZIP -----*/
+.city-info {
+    font-family: var(--main);
+    color: var(--lightOrange);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/*----- EMAIL & PHONE -----*/
+.contact-info {
+    font-family: var(--main);
+    color: var(--lightOrange);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
