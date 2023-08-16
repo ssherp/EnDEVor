@@ -1,4 +1,6 @@
 <!--iterate through all services and create, trying out partials -Aaron-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,26 +17,27 @@
 			<section class="col">
 				<div class="row align-items-start">
 					<h1>Add Service</h1>
-					<form class="col services-list">
-					<!-- Service -->
+
+					<form class="col" id="add-service-form">
+						<!-- Service -->
 						<h2>Service: </h2>
 						<div class="row">
 							<div class="col">
-								<input type="text" id="service-name" class="form-control" placeholder="Enter Service Name" aria-label="Project name">
+								<input type="text" id="input-service-name" class="form-control" placeholder="Enter Service Name" aria-label="">
 							</div>
 						</div>
-					<!-- Description -->
+						<!-- Description -->
 						<h2>Description: </h2>
 						<div class="row">
 							<div class="col">
-								<input type="text" id="service-description" class="form-control" placeholder="Enter Service Description" aria-label="First name" >
+								<input type="text" id="input-service-description" class="form-control" placeholder="Enter Description" aria-label="">
 							</div>
 						</div>
-					<!-- Price -->				
+						<!-- Price -->				
 						<h2>Price: </h2>
 						<div class="row">
 							<div class="col">
-								<input type="number" class="service-description" placeholder="Enter Price" aria-label="Project name">
+								<input type="number" id="input-service-price" class="service-description" placeholder="Enter Price" aria-label="">
 							</div>
 						</div>
 						<button type="submit" id="add-service-btn" class="btn btn-primary btn-lg">Add</button>

@@ -1,15 +1,16 @@
 const router = require('express').Router();
-const { Service } = require('../../models');
+const { Service , User } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 //create new service to services list 
 router.post('/', async (req,res) => {
+	console.log(req)
 	try {
-		const serviceData = await Service.create({
-			...req.body,
-			user_id: req.session.user_id
-		});
-		res.status(200).json(serviceData)
+		const serviceData = await Service.create(req.body);
+		for (const userId of req.body.user_id) {
+			await User.create(userId)
+		}
+		res.status(200).json(serviceData);
 	} catch (err) {
 		req.status(500).json(err);
 	} 
@@ -103,3 +104,7 @@ router.delete('/:id', async (req,res) => {
 
 module.exports = router;
 
+		// ({
+		// 	...req.body,
+		// 	user_id: req.session.user_id
+		// });

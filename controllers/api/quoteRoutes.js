@@ -48,7 +48,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-
 // DELETE a quote
 router.delete('/:id', async (req, res) => {
     try {
