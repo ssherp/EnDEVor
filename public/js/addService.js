@@ -20,7 +20,7 @@ async function addServiceHandler(event) {
 			headers: { 'Content-Type': 'services/json' },
 		})
 		if (response.ok) 
-			document.location.replace('/')
+			document.location.replace('/services')
 		else {
 			alert('Failed to add service');
 		} 
@@ -29,7 +29,7 @@ async function addServiceHandler(event) {
 
 
 document
-	.querySelector('services-list')
+	.querySelector('add-service-form')
 	.addEventListener('submit', addServiceHandler)
 
 

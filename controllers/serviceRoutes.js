@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res)=>{
 		});
 
 		const services = servicesData.get({ plain: true })
-		 res.render('addService', { 
+		 res.render('service', { 
 			...services,
 			logged_in: req.session.logged_in 
 		 });

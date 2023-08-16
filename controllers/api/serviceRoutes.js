@@ -37,8 +37,8 @@ router.get ('/', withAuth, async (req, res) => {
 		});
 
 		const services = servicesData.map((service) => service.get({ plain: true })) 
-		res.render('addService', {services})
-		res.status(200).json(servicesData)
+		// res.render('service', {services})
+		res.status(200).json(services)
 		}
 	catch (err) { 
 		res.status(500).json(err);
@@ -55,7 +55,7 @@ router.get('/:id', async (req, res) => {
 			res.status(404).json({ message: 'No service found with this ID' });
 			return;
 		}
-		res.render('editService', { service })
+		res.render('addService', { service })
 		res.status(200).json(servicesData);
 	} catch (err) {
 		res.status(500).json(err)

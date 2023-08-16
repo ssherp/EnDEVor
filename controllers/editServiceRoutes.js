@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Service, User , Quote , Quote_Item , } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/:id', withAuth, async (req, res)=>{
+router.get('/', withAuth, async (req, res)=>{
 	try {
 		const servicesList = await Service.findByPk(req.params.user_id, {
 			include: [

@@ -15,7 +15,7 @@
 			<section class="col">
 				<div class="row align-items-start">
 					<h1>Add Service</h1>
-					<form class="col services-list">
+					<form class="col add-service-form">
 					<!-- Service -->
 						<h2>Service: </h2>
 						<div class="row">
@@ -46,18 +46,19 @@
 			<section class="col">
 				<h1>Services List</h1>
 				<div class="row align">
-			<!--handlebar renders each-->		
-					{{#each services as |service|}}
-					<div class="service-card">
-						<button id="edit-service-btn" value="{{ id }}">
-							<a href="services/{{id}}"></a>
-							<h2 id="service-name" class="text-danger">{{service_name}}<h2/>
-							<p id="service-price" class="text-white"><strong>{{service_price}}</strong></p>
-							<p id="service-description" class="text-warning">{{service_description}}</p>
-						</button>
-					</div>
-					{{/each}}
-					<button type="submit" id="edit-service-btn" class="btn btn-primary btn-lg">Edit<a href="/services/edit/"></a></button>
+					<form>
+				<!--handlebar renders each service as button-->		
+						{{#each services as |service|}}
+						<div class="service-card">
+							<button id="edit-service-btn" value="{{ id }}">
+								<a href="services/{{id}}"></a>
+								<h2 id="service-name" class="text-danger">{{service_name}}<h2/>
+								<p id="service-price" class="text-white"><strong>{{service_price}}</strong></p>
+								<p id="service-description" class="text-warning">{{service_description}}</p>
+							</button>
+						</div>
+						{{/each}}
+						<button type="submit" id="edit-service-btn" class="btn btn-primary btn-lg">Edit<a href="/services/edit/"></a></button>
 					</form>
 				</div>
 			</section>
