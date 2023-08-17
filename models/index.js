@@ -1,5 +1,5 @@
 const User = require("./User");
-const Service = require("./Service");
+const Services = require("./Services");
 const Quote = require("./Quote");
 const Quote_Item = require("./Quote_Item");
 
@@ -13,20 +13,20 @@ Quote.hasMany(Quote_Item, {
 
 });
 
-Quote_Item.belongsTo(Service, {
+Quote_Item.belongsTo(Services, {
 	foreignKey: "service_id"
 });
 
-Service.hasMany(Quote_Item, {
+Services.hasMany(Quote_Item, {
 	foreignKey: "service_id"
 });
 
-Service.belongsTo(User, {
+Services.belongsTo(User, {
 	foreignKey: "user_id",
 	onDelete: "CASCADE"
 });
 
-User.hasMany(Service, {
+User.hasMany(Services, {
 	foreignKey: "user_id",
 });
 
@@ -47,4 +47,4 @@ User.hasMany(Quote_Item, {
 	foreignKey: "user_id",
 });
 
-module.exports = { User, Service, Quote, Quote_Item };
+module.exports = { User, Services, Quote, Quote_Item };
