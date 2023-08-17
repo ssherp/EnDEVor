@@ -73,9 +73,7 @@
 
 | Technology Used | Resource URL                                                      |
 | --------------- | ----------------------------------------------------------------- |
-| HTML Semantic Elements | [https://www.w3schools.com/html/html5_semantic_elements.asp](https://www.w3schools.com/html/html5_semantic_elements.asp) |
-| HTML input Tag | [https://www.w3schools.com/tags/tag_input.asp](https://www.w3schools.com/tags/tag_input.asp) |
-| A Complete Guide to Flexbox | [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) |
+| PDFKIT | [https://pdfkit.org/](https://pdfkit.org/) |
 
 <br>
 
