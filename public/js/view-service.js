@@ -4,8 +4,12 @@
             //select which parameters you want to extract
             //serialize data
         //Create a partial for each service item
+            //write a for each function
             //Make each service item a button
-            //Redirect to "EDIT SERVICE HANDLEBAR" for that specific service item
+                //Redirect to "EDIT SERVICE HANDLEBAR" for that specific service item
+                    //use "this" keyword, so the event points to the correct item and save it using setLocalStorage
+                    //addEventListener
+                    //window.location.href="(file path)"
 
 //Add Event Listener for the "ADD ITEM" button
     //Redirect to "ADD SERVICE HANDLEBAR"
