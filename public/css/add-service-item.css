@@ -55,6 +55,14 @@ main {
     height: 100vh;
 }
 
+/*----- HEADER -----*/
+h1 {
+    color: var(--blue);
+    font-size: 60px;
+    text-align: center;
+    margin-top: 100px;
+}
+
 /*----- GLASS BACKGROUND -----*/
 .glass-bg {
     background: rgba(255, 255, 255, 0.171);
@@ -66,6 +74,7 @@ main {
     justify-content: center;
     align-items: center;
     border: var(--blue) solid 3px;
+    margin-bottom: 50px;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -75,58 +84,10 @@ main {
     }
 }
 
-/*----- HEADER -----*/
-h1 {
-    color: var(--lightOrange);
-    font-size: 45px;
-    text-align: center;
-    font-family: var(--main);
-}
+/*----- FORM -----*/
 
-/*----- SERVICES -----*/
-.card-layout {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    overflow-x: auto;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-article header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-}
-
-article header p {
-    font-weight: bolder;
-    color: var(--blue);
-    font-family: var(--main);
-    font-size: 20px;
-}
-
-article div {
-    font-family: var(--main);
-    color: var(--light);
-    width: 60%;
-}
-
-h2 {
-    color: var(--orange);
-    font-size: 25px;
-    text-align: left;
-    font-family: var(--main);
+.add-service-form {
+    outline: red dashed 2px;
 }
 
 /*----- ADD BUTTON -----*/
