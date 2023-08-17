@@ -40,7 +40,6 @@ async function addServiceItem(event) {
         if (response.ok) {
             console.log(response);
             document.location.replace("/services")
-
         }
         else {
             alert('Failed to add service');
