@@ -1,16 +1,18 @@
 const router = require('express').Router();
-const { Service , User } = require('../../models');
+const { Services , User } = require('../../models');
 const withAuth = require('../../utils/auth')
 
-//create new service to services list 
+//POST a new service
 router.post('/', async (req,res) => {
 	console.log(req)
 	try {
-		const serviceData = await Service.create(req.body);
-		for (const userId of req.body.user_id) {
-			await User.create(userId)
-		}
-		res.status(200).json(serviceData);
+		const newService = await Services.create({
+			service_name: req.body.service_name,
+			service_description: req.body.service_description,
+			service_price: req.body.service_price,
+			user_id: res.session.user_id
+		});
+		res.status(200).json(newService);
 	} catch (err) {
 		req.status(500).json(err);
 	} 
