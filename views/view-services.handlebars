@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <!-- CSS Link -->
-<link rel="stylesheet" href="/css/test-service.css">
+<link rel="stylesheet" href="/css/view-services.css">
 <main>
     <!-- Nav Bar -->
     <nav class="main-nav">
@@ -19,12 +19,15 @@
     <h1>Services</h1>
     <div class="glass-bg">
         <div class="card-layout">
-            
+            {{#each services as |service|}}
+            {{> view-service-item}}
+            {{/each}}
         </div>
         <div class="order">
-            <button id="add-item" type="submit">Add Item</button>
+            <button id="add-item" type="submit">Add Service</button>
         </div>
     </div>
 </main>
 
-<!--add script for view-service.js
+<!-- JS Link -->
+<script src="/js/view-services.js"></script>

@@ -1,16 +1,3 @@
-//Get all services based on logged in user
-    //Write a function that is triggered on page load
-        //Make a get all services fetch
-            //select which parameters you want to extract
-            //serialize data
-        //Create a partial for each service item
-            //write a for each function
-            //Make each service item a button
-                //Redirect to "EDIT SERVICE HANDLEBAR" for that specific service item
-                    //use "this" keyword, so the event points to the correct item and save it using setLocalStorage
-                    //addEventListener
-                    //window.location.href="(file path)"
-
 //Add Event Listener for the "ADD ITEM" button
     //Redirect to "ADD SERVICE HANDLEBAR"
         //getElementById
@@ -18,3 +5,30 @@
         //write a function
             //window.location.href="(file path)"
                 //set up the route for the "add service item" handlebar
+
+//------------------------------ Query Selectors ------------------------------//
+
+//Add Item Selector
+const addItemBtn = document.querySelector('#add-item');
+
+
+
+
+
+//------------------------------ Event Listener ------------------------------//
+
+//Add Item Button
+addItemBtn.addEventListener('click', addServiceItem)
+
+
+
+
+
+//------------------------------ Event Listener ------------------------------//
+
+//Redirect User to Add Service
+function addServiceItem(event) {
+    event.preventDefault();
+
+    window.location.href="/add-service-item";
+};

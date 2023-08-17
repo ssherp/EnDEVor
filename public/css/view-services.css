@@ -101,6 +101,10 @@ article {
     width: 100%;
 }
 
+article a {
+    text-decoration: none;
+}
+
 article header {
     display: flex;
     flex-direction: row;
