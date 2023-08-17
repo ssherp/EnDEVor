@@ -209,6 +209,14 @@ h2 {
     align-items: center;
 }
 
+.service-id {
+    display: none;
+}
+
+.service-price {
+    display: none;
+}
+
 .order button {
     background-color: var(--dark);
     color: var(--red);

@@ -4,18 +4,18 @@ const withAuth = require('../../utils/auth')
 
 //POST a new service
 router.post('/', async (req,res) => {
-	console.log(req)
-	try {
+	console.log(req.body)
+	//try {
 		const newService = await Services.create({
 			service_name: req.body.service_name,
 			service_description: req.body.service_description,
 			service_price: req.body.service_price,
-			user_id: res.session.user_id
+			user_id: req.session.user_id
 		});
 		res.status(200).json(newService);
-	} catch (err) {
-		req.status(500).json(err);
-	} 
+	// } catch (err) {
+	// 	res.status(500).json(err);
+	// } 
 });
 
 //GET all services
