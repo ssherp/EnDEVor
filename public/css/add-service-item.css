@@ -86,7 +86,7 @@ h1 {
 
 /*----- FORM -----*/
 
-.add-service-form {
+#add-service-form {
     outline: red dashed 2px;
 }
 

@@ -190,16 +190,10 @@
                     <label for="serviceName">Service:</label>
                     <select class="form-select" aria-label="Choose a service" id="serviceName">
                         <!-- ADD A PARTIAL FOR EACH OPTION -->
-                        {{!-- {{#each services as |service|}}
+                        {{#each services as |service|}}
                         {{> service-options}}
-                        {{#/each}}
+                        {{/each}}
                         <option selected>Choose a service</option>
-                        <option selected>{{service.name}}</option>
-                        <div class="service-id">{{service.id}}</div>
-                        <div class="service-price">{{service.price}}</div>
-                        .service-id {
-                            display: none;
-                        } --}}
                     </select>
                 </div>
             </div>

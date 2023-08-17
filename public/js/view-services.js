@@ -30,5 +30,5 @@ addItemBtn.addEventListener('click', addServiceItem)
 function addServiceItem(event) {
     event.preventDefault();
 
-    window.location.href="/add-service-item";
+    window.location.href="/services/add-service-item";
 };
