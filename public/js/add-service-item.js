@@ -4,3 +4,4 @@
         //call on the POST route to create new item
         //use the accurate parameters
             //name, description, and price
+    //if the response.ok then redirect the user to the view-services page
