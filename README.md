@@ -86,9 +86,9 @@
 
 ## Deployment
 
-Website URL: [enDEVors](site link)
+Website URL: [enDEVors](https://endevor-3d604fa0490c.herokuapp.com/)
 
-![alt text](./assets/images/)
+![alt text](./public/assets/endevors-home.png)
 
 <br>
 

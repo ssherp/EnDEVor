@@ -25,7 +25,7 @@ async function addServiceItem(event) {
     const service_name = document.querySelector('#name-input').value.trim();
     const service_description = document.querySelector('#floatingTextarea2').value.trim();
     const service_price = document.querySelector('#price-input').value.trim();
-    alert(service_name + service_description + service_price)
+    alert("Service added!");
     // Sending response to add new service
     if (service_name && service_description && service_price) {
         const response = await fetch('/api/services/', {
