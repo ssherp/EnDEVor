@@ -6,14 +6,19 @@ const serviceRoutes = require('./serviceRoutes');
 const quoteFormRoutes = require('./quoteFormRoutes');
 const quoteFileRoutes = require('./quoteFileRoutes');
  
-//Not sure if different files are necessary
+//CRUD Routes
 router.use('/api', apiRoutes);
+
+//Render Routes
 router.use('/', homeRoutes);
-// services routes
+
+// Services Routes
 router.use('/services', serviceRoutes);
-// profile route -> when does user fill this out?
-// quote routes
+
+//Create Quote Routes
 router.use('/quote_form', quoteFormRoutes);
+
+//View and Download Quote Routes
 router.use('/quote_file', quoteFileRoutes);
 
 

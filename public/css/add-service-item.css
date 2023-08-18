@@ -57,10 +57,19 @@ main {
 
 /*----- HEADER -----*/
 h1 {
+    font-family: var(--main);
     color: var(--blue);
     font-size: 60px;
     text-align: center;
     margin-top: 100px;
+}
+
+h2 {
+    font-family: var(--main);
+    color: var(--orange);
+    font-size: 20px;
+    text-align: left;
+    margin-top: 25px
 }
 
 /*----- GLASS BACKGROUND -----*/
@@ -85,9 +94,40 @@ h1 {
 }
 
 /*----- FORM -----*/
+#add-service-item {
+    outline: green dashed 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
-#add-service-form {
-    outline: red dashed 2px;
+.name {
+    width: 80%;
+}
+
+.name input {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.description {
+    width: 80%;
+}
+
+.description textarea {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.price {
+    width: 80%;
+}
+
+.price input {
+    width: 100%;
+    border-radius: 5px;
 }
 
 /*----- ADD BUTTON -----*/
