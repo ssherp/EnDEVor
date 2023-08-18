@@ -6,7 +6,7 @@
 //name, description, and price
 //if the response.ok then redirect the user to the view-services page
 
-//------------------------------ Query Selectors ------------------------------//
+//------------------------------ Event Listeners ------------------------------//
 
 //Add Item Selector
 const addItemBtn = document.querySelector('#add-item');
