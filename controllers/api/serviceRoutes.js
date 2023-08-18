@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Services , User } = require('../../models');
+const { Service , User } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 //POST a new service
 router.post('/', async (req,res) => {
 	console.log(req.body)
 	//try {
-		const newService = await Services.create({
+		const newService = await Service.create({
 			service_name: req.body.service_name,
 			service_description: req.body.service_description,
 			service_price: req.body.service_price,
@@ -16,20 +16,6 @@ router.post('/', async (req,res) => {
 	// } catch (err) {
 	// 	res.status(500).json(err);
 	// } 
-});
-
-//GET all services
-router.get ('/',  async (req, res) => {
-	try {
-		const servicesData = await Service.findAll();
-		console.log(servicesData)
-		const services = servicesData.map((service) => service.get({ plain: true })) 
-		res.status(200).json(services)
-		console.log(services) 
-		}
-	catch (err) { 
-		res.status(500).json(err);
-	}
 });
 
 //GET all services for logged-in user
