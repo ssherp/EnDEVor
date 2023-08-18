@@ -226,7 +226,24 @@ h2 {
     margin-top: 15px;
 }
 
-/*----- NOTES -----*/
+/*----- CUSTOMIZATION -----*/
+/* .color {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--main);
+    color: var(--lightOrange);
+    font-size: 15px;
+}
+
+.color label {
+    margin-top: 10px;
+}
+
+.color input {
+    width: 25%;
+    height: 50px;
+} */
 
 /*----- CREATE BUTTON -----*/
 .pdf-submit {
