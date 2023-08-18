@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Services, Quote_Item } = require('../models')
+const { Service, Quote_Item } = require('../models')
 
 //Get ALL Services
 router.get('/', withAuth, async (req, res) => {
 	try {
 		//Get all services in the Services model
-		const allServices = await Services.findAll({
+		const allServices = await Service.findAll({
 			include: [{
 				model: Quote_Item
 			}]
@@ -30,7 +30,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/add-service-item', withAuth, async (req, res) => {
 	try {
 		//Get a services in the Services model
-		const allServices = await Services.findAll();
+		const allServices = await Service.findAll();
 
 		//Serialize the Services data so the template (handlebars) can read it
 		const services = allServices.map((service) => service.get({ plain: true }));
