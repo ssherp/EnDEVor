@@ -3,56 +3,76 @@
 <main>
         <!-- Developer Info -->
         <header>
-                <h1>{{project_title}} Quote</h1>
-                <ul>
-                        <li>{{userFirst}} {{userLast}}</li>
-                        <li>{{userEmail}}</li>
-                        <li>{{userPhone}}</li>
-                </ul>
+                <h1>{{project_title}} Test Quote</h1>
         </header>
         <div></div>
+        <!-- Job Info -->
+        <div class="job">
+                <h2>Job:</h2>
+                <ul>
+                        <li>{{project_title}}Test Project</li>
+                        <li>Estimated Completion: {{project_due_date}}09/14/2023</li>
+                </ul>
+        </div>
         <section class="contact">
                 <!-- Client Info -->
                 <div class="client">
                         <h2>Client:</h2>
                         <ul>
-                                <li>{{client_first}} {{client_last}}</li>
-                                <li>{{client_address}} {{client_address_2}}</li>
-                                <li>{{client_city}}, {{client_state}} {{client_zip}}</li>
+                                <li>{{client_first}}First {{client_last}}Last</li>
+                                <li>{{client_address}}123 Main St {{client_address_2}}Ste 123</li>
+                                <li>{{client_city}}Main, {{client_state}}CA {{client_zip}}12345</li>
                         </ul>
                 </div>
-                <!-- Job Info -->
-                <div class="job">
-                        <h2>Job:</h2>
+                <div>
+                        <h2>Developer:</h2>
                         <ul>
-                                <li>{{project_title}}</li>
-                                <li>Estimated Completion: {{project_due_date}}</li>
+                                <li>{{userFirst}}First {{userLast}}Last</li>
+                                <li>{{userEmail}}test@email.com</li>
+                                <li>{{userPhone}}1234567890</li>
                         </ul>
                 </div>
         </section>
         <div></div>
         <!-- Quote Items -->
-        <section>
+        <section class="service-box">
                 <h2>Services:</h2>
-                <div class="service-box">
-                        <div>
+                <div class="service-sections">
+                        <div class="qty">
                                 <h3>Qty</h3>
-                                <h3>Services</h3>
+                                <div>
+                                        {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_qty}}
+                                        {{/each}}
+                                </div>
+                        </div>
+                        <div class="service">
+                                <h3>Service</h3>
+                                <div>
+                                        {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_item}}
+                                        {{/each}}
+                                </div>
+                        </div>
+                        <div class="price">
                                 <h3>Price</h3>
+                                <div>
+                                        {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_price}}
+                                        {{/each}}
+                                </div>
                         </div>
-                        {{#each quote_items as |quote_item|}}
-                        {{> quote_service_items}}
-                        {{/each}}
-                        <div>
-                                <h3>Total:</h3>
-                                <h3>{{totalPrice}}</h3>
-                        </div>
+                </div>
+                <div>
+                        <h3>Total:</h3>
+                        <h3>{{totalPrice}}$200.00</h3>
+                </div>
                 </div>
         </section>
         <!-- Notes -->
         <section>
                 <h2>Notes:</h2>
-                <p>{{notes}}</p>
+                <p>{{notes}}This is a note.</p>
         </section>
         <div></div>
         <!-- Client Signature -->
@@ -72,7 +92,7 @@
                 </div>
         </section>
         <div>
-                <button id="download" onclick="window.print()">Download</button>
+                <button id="download">Download</button>
         </div>
 </main>
 

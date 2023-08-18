@@ -45,16 +45,20 @@ h2 {
 }
 
 /*------------- ORDER SECTION -------------*/
-
 .service-box {
     border: black solid 3px;
+}
+
+.service-sections {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
+
 }
 
 /*------------- DOWNLOAD BUTTON -------------*/
 @media print {
     #download {
-      display: none;
+        display: none;
     }
-  }
+}
