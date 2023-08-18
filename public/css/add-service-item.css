@@ -95,11 +95,11 @@ h2 {
 
 /*----- FORM -----*/
 #add-service-item {
-    outline: green dashed 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
     width: 100%;
 }
 

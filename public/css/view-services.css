@@ -53,19 +53,20 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
 /*----- GLASS BACKGROUND -----*/
 .glass-bg {
     background: rgba(255, 255, 255, 0.171);
     backdrop-filter: saturate(180%) blur(10px);
-    width: 90%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: var(--blue) solid 3px;
+    width: 75%;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -77,16 +78,19 @@ main {
 
 /*----- HEADER -----*/
 h1 {
-    color: var(--lightOrange);
-    font-size: 45px;
-    text-align: center;
     font-family: var(--main);
+    color: var(--blue);
+    font-size: 60px;
+    text-align: center;
+    margin-top: 100px;
 }
 
 /*----- SERVICES -----*/
 .card-layout {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     overflow-x: auto;
 }
@@ -94,8 +98,9 @@ h1 {
 article {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--red) solid 3px;
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
@@ -103,14 +108,15 @@ article {
 
 article a {
     text-decoration: none;
+    width: 100%;
 }
 
 article header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 80%;
+    align-items: start;
+    width: 100%;
 }
 
 article header p {
@@ -124,13 +130,16 @@ article div {
     font-family: var(--main);
     color: var(--light);
     width: 60%;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
 }
 
 h2 {
     color: var(--orange);
-    font-size: 25px;
     text-align: left;
     font-family: var(--main);
+    font-size: 20px;
 }
 
 /*----- ADD BUTTON -----*/

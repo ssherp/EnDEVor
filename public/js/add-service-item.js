@@ -6,10 +6,21 @@
 //name, description, and price
 //if the response.ok then redirect the user to the view-services page
 
-//------------------------------ Query Selectors ------------------------------//
+//------------------------------ Event Listeners ------------------------------//
 
 //Add Item Selector
 const addItemBtn = document.querySelector('#add-item');
+addItemBtn.addEventListener('submit', addServiceItem)
+
+
+
+
+
+//------------------------------ Redirect User ------------------------------//
+
+function backToServices() {
+    window.location.href="/services";
+}
 
 
 
@@ -17,13 +28,12 @@ const addItemBtn = document.querySelector('#add-item');
 
 //------------------------------ Create Service Item ------------------------------//
 
-//using submit event listener, all changes will be at click of button in function.
 async function addServiceItem(event) {
     event.preventDefault();
 
     //User Input Selectors
     const service_name = document.querySelector('#name-input').value.trim();
-    const service_description = document.querySelector('#floatingTextarea2').value.trim();
+    const service_description = document.querySelector('#description-input').value.trim();
     const service_price = document.querySelector('#price-input').value.trim();
     alert("Service added!");
     // Sending response to add new service
@@ -39,13 +49,10 @@ async function addServiceItem(event) {
         })
         if (response.ok) {
             console.log(response);
-            document.location.replace("/services")
+            backToServices()
         }
         else {
             alert('Failed to add service');
         }
     }
 };
-document
-    .querySelector('#add-service-form')
-    .addEventListener('submit', addServiceItem)

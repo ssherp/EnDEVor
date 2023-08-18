@@ -18,14 +18,15 @@
     <!-- Order Info -->
     <h1>Services</h1>
     <div class="glass-bg">
-        <div class="card-layout">
-            {{#each services as |service|}}
-            {{> view-service-items}}
-            {{/each}}
-        </div>
+            <div class="card-layout">
+                {{#each services as |service|}}
+                {{> view-service-items}}
+                {{/each}}
+            </div>
         <div class="order">
             <button id="add-item" type="submit">Add Service</button>
         </div>
+
     </div>
 </main>
 
