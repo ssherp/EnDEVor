@@ -78,10 +78,11 @@ main {
 
 /*----- HEADER -----*/
 h1 {
-    color: var(--lightOrange);
-    font-size: 45px;
-    text-align: center;
     font-family: var(--main);
+    color: var(--blue);
+    font-size: 60px;
+    text-align: center;
+    margin-top: 100px;
 }
 
 /*----- SERVICES -----*/
