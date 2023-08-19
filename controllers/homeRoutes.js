@@ -31,7 +31,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     // Serialize user data for the template
     const serializedUserData =userData.get({ plain: true });
-
+console.log(serializedUserData)
     // Render the profile template and pass the serialized user data
     res.render('profile', {
       serializedUserData,

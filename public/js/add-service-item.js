@@ -9,7 +9,7 @@
 //------------------------------ Event Listeners ------------------------------//
 
 //Add Item Selector
-const addItemBtn = document.querySelector('#add-item');
+const addItemBtn = document.querySelector('#add-service-item');
 addItemBtn.addEventListener('submit', addServiceItem)
 
 
