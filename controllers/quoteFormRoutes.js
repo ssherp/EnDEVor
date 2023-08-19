@@ -1,7 +1,23 @@
+//-------------------- Requires --------------------//
+
+//Express Package
 const router = require('express').Router();
-const { Service, User , Quote , Quote_Item , } = require('../models');
+
+
+//All Models
+const { Service } = require('../models');
+
+
+//Helper
 const withAuth = require('../utils/auth');
 
+
+
+
+
+//-------------------- Render File Paths --------------------//
+
+//Quote Form
 router.get('/', withAuth, async (req, res)=>{
 	try{
 		const serviceData=await Service.findAll()
@@ -16,5 +32,9 @@ router.get('/', withAuth, async (req, res)=>{
 	}
  })
 
- module.exports = router;
 
+
+
+
+  //-------------------- Export Render Routes --------------------//
+ module.exports = router;

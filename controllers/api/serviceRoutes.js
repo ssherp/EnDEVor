@@ -1,8 +1,23 @@
-const router = require('express').Router();
-const { Service , User } = require('../../models');
-const withAuth = require('../../utils/auth')
+//-------------------- Requires --------------------//
 
-//POST a new service
+//Express Package
+const router = require('express').Router();
+
+
+//Service & User Model
+const { Service , User } = require('../../models');
+
+
+//Helper
+const withAuth = require('../../utils/auth');
+
+
+
+
+
+//-------------------- CRUD & File Paths --------------------//
+
+//Create a new service
 router.post('/', async (req,res) => {
 	console.log(req.body)
 	//try {
@@ -18,7 +33,9 @@ router.post('/', async (req,res) => {
 	// } 
 });
 
-//GET all services for logged-in user
+
+
+//Get all services
 router.get ('/', withAuth, async (req, res) => {
 	try {
 		const servicesData = await Service.findAll({
@@ -34,7 +51,9 @@ router.get ('/', withAuth, async (req, res) => {
 	}
 });
 
-//GET single service
+
+
+//GET a service
 router.get('/:id', async (req, res) => {
 	try {
 		const servicesData = await Service.findByPk(req.params.id);
@@ -51,7 +70,9 @@ router.get('/:id', async (req, res) => {
 	 }
 });
 
-//edit service by id  - 13.7, routes
+
+
+//Update a service by id  - 13.7, routes
 router.put('/:id', async (req,res) => {
 	try {
 		const serviceUpdate = await Service.update(serviceUpdate, 
@@ -72,7 +93,9 @@ router.put('/:id', async (req,res) => {
 	}
 }); 
 
-//delete method but id, services id placeholder for future services database pathway
+
+
+//Delete a service
 router.delete('/:id', async (req,res) => {
 	try {
 		const servicesData = await Service.destroy({
@@ -90,9 +113,10 @@ router.delete('/:id', async (req,res) => {
 		}
 });
 
-module.exports = router;
 
-		// ({
-		// 	...req.body,
-		// 	user_id: req.session.user_id
-		// });
+
+
+
+//-------------------- Export Service CRUD Routes --------------------//
+
+module.exports = router;

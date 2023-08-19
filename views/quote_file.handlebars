@@ -1,42 +1,23 @@
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- CSS Link -->
 <link rel="stylesheet" href="/css/quote-file.css">
 
+<!-- Main Body -->
 <main>
         <!-- Developer Info -->
         <header>
                 <h1>{{project_title}} Test Quote</h1>
+                <div class="admin-numbers">
+                        <p>Nº{{quote_id}}</p>
+                        <p id="current-date">Aug. 23, 2023</p>
+                </div>
         </header>
-        <div></div>
-        <!-- Job Info -->
-        <div class="job">
-                <h2>Job:</h2>
-                <ul>
-                        <li>{{project_title}}Test Project</li>
-                        <li>Estimated Completion: {{project_due_date}}09/14/2023</li>
-                </ul>
-        </div>
-        <section class="contact">
-                <!-- Client Info -->
-                <div class="client">
-                        <h2>Client:</h2>
-                        <ul>
-                                <li>{{client_first}}First {{client_last}}Last</li>
-                                <li>{{client_address}}123 Main St {{client_address_2}}Ste 123</li>
-                                <li>{{client_city}}Main, {{client_state}}CA {{client_zip}}12345</li>
-                        </ul>
-                </div>
-                <div>
-                        <h2>Developer:</h2>
-                        <ul>
-                                <li>{{userFirst}}First {{userLast}}Last</li>
-                                <li>{{userEmail}}test@email.com</li>
-                                <li>{{userPhone}}1234567890</li>
-                        </ul>
-                </div>
-        </section>
-        <div></div>
+
         <!-- Quote Items -->
         <section class="service-box">
-                <h2>Services:</h2>
                 <div class="service-sections">
                         <div class="qty">
                                 <h3>Qty</h3>
@@ -69,12 +50,14 @@
                 </div>
                 </div>
         </section>
+
         <!-- Notes -->
         <section>
                 <h2>Notes:</h2>
                 <p>{{notes}}This is a note.</p>
         </section>
         <div></div>
+
         <!-- Client Signature -->
         <section>
                 <h2>Signature:</h2>
@@ -91,9 +74,45 @@
                         </div>
                 </div>
         </section>
-        <div>
+
+        <div class="split-container">
+                <div class="split"></div>
+        </div>
+
+        <section class="contact">
+                <div>
+                        <!-- Client Info -->
+                        <div class="client">
+                                <p>{{client_first}}First {{client_last}}Last
+                                        <br>
+                                        {{client_address}}123 Main St {{client_address_2}}Ste 123
+                                        <br>
+                                        {{client_city}}Main, {{client_state}}CA {{client_zip}}12345
+                                </p>
+                        </div>
+                        <!-- Developer Info -->
+                        <div class="developer">
+                                <p>{{userFirst}}First {{userLast}}Last
+                                        <br>
+                                        {{userEmail}}test@email.com
+                                        <br>
+                                        {{userPhone}}1234567890
+                                </p>
+                        </div>
+                </div>
+
+                <!-- Job Info -->
+                <div class="job">
+                        <p class="due-date">Estimated Completion: {{project_due_date}}09/14/2023</p>
+                        <p class="thanks">Thank you!</p>
+                </div>
+        </section>
+
+        <!-- Download -->
+        <div class="btn-container">
                 <button id="download">Download</button>
         </div>
+
 </main>
 
 <!-- JS Link -->

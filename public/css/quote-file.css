@@ -1,21 +1,73 @@
+/*----- COLOR & FONTS -----*/
+:root {
+    --dark: #272822;
+    --light: #F8F8F3;
+    --blue: #0D859A;
+    --lightOrange: #F08C01;
+    --orange: #E8580C;
+    --red: #E23230;
+    --main: 'Press Start 2P', cursive;
+    --other: 'Source Code Pro', monospace;
+}
+
+/*-------------------- DEFAULT CSS --------------------*/
 /*------------- NAV -------------*/
 main {
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
 /*------------- HEADER -------------*/
 header {
     outline: red dashed 3px;
     display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+    margin-top: 10%;
+}
+
+h1 {
+    outline: blue dashed 3px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.admin-numbers {
+    outline: green dashed 3px;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+
+/*------------- ORDER SECTION -------------*/
+.service-box {
+    outline: blue dashed 3px;
+    margin-top: 50px;
+}
+
+.service-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+/*------------- SPLIT -------------*/
+
+.split-container {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-h1 {
-    font-size: 35px;
-    font-weight: bolder;
+.split {
+    outline: black solid 3px;
+    width: 100%;
 }
 
 /*------------- CONTACT SECTION -------------*/
@@ -40,19 +92,23 @@ h2 {
     flex-direction: column;
 }
 
-/*------------- ORDER SECTION -------------*/
-.service-box {
-    border: black solid 3px;
-}
-
-.service-sections {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-}
-
 /*------------- DOWNLOAD BUTTON -------------*/
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container button {
+    background-color: var(--dark);
+    color: var(--red);
+    border: var(--red) solid 3px;
+    padding: 10px;
+    font-family: var(--main);
+    margin-top: 15px;
+}
+
 @media print {
     #download {
         display: none;
