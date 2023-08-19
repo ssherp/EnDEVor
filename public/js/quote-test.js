@@ -1,4 +1,4 @@
-const createBtn = document.getElementById('#create-btn');
+const createBtn = document.getElementById('#create-quote-form');
 
 createBtn.addEventListener('click', pdfPage);
 

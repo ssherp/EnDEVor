@@ -4,7 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res)=>{
 	try{
+		const serviceData=await Service.findAll()
+		const services=serviceData.map(service=>service.get({plain:true}))
+		console.log(services)
 		 res.render('quote-form', { 
+			services,
 			logged_in: req.session.logged_in 
 		 });
 	}catch(error){
