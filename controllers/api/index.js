@@ -14,7 +14,7 @@ const quoteItemRoutes= require ('./quoteItemRoutes')
 
 
 
-//-------------------- File Paths: Part II --------------------//
+//-------------------- CRUD File Paths: Part II --------------------//
 
 //Users
 router.use('/users', userRoutes);
