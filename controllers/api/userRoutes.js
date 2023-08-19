@@ -126,5 +126,5 @@ router.post('/logout', (req, res) => {
 
 
 
-//-------------------- Export CRUD Routes --------------------//
+//-------------------- Export User CRUD Routes --------------------//
 module.exports = router;
