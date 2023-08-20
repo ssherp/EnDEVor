@@ -17,44 +17,148 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 8%;
     margin-right: 8%;
+    margin-top: 8%;
 }
 
 /*------------- HEADER -------------*/
 header {
-    outline: red dashed 3px;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: start;
-    margin-top: 10%;
 }
 
 h1 {
-    outline: blue dashed 3px;
-    font-size: 50px;
+    font-size: 48px;
     font-weight: bolder;
 }
 
 .admin-numbers {
-    outline: green dashed 3px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 20%;
+    font-size: 14px;
+}
+
+.quote-num {
+    color: rgb(199, 0, 0);
 }
 
 /*------------- ORDER SECTION -------------*/
 .service-box {
-    outline: blue dashed 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-top: 50px;
+}
+
+h2 {
+    font-size: 12px;
+    font-style: italic;
+    border-bottom: black solid 1px;
 }
 
 .service-sections {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    width: 60%;
 
+}
+
+.service {
+    width: 80%;
+}
+
+.qty {
+    width: 10%;
+}
+
+.price {
+    width: 10%;
+}
+
+.quote-item {
+    font-size: 12px;
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    text-align: right;
+    width: 60%;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 12px;
+    font-weight: bolder;
+    width: 20%;
+    text-align: left;
+}
+
+.total p {
+    font-size: 12px;
+    width: 20%;
+    text-align: left;
+}
+
+/*------------- NOTES -------------*/
+
+.notes {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.notes p {
+    font-size: 12px;
+    width: 60%;
+}
+
+/*------------- SIGNATURE -------------*/
+
+.signature {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 10px 20px 10px ;
+}
+
+h4 {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.sig-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.sign-line {
+    outline: black solid 1px;
+    width: 100%;
+}
+
+.sig-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.date-line {
+    outline: black solid 1px;
+    width: 100%;
 }
 
 /*------------- SPLIT -------------*/
@@ -63,26 +167,40 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
 }
 
 .split {
-    outline: black solid 3px;
+    outline: black solid 2px;
     width: 100%;
 }
 
 /*------------- CONTACT SECTION -------------*/
 
-h2 {
-    font-size: 16px;
-    font-weight: bolder;
+.footing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 12px;
 }
 
 .contact {
     display: flex;
     flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    width: 50%;
+    text-align: left;
 }
 
 .client {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+}
+
+.developer {
     display: flex;
     flex-direction: column;
 }
@@ -90,6 +208,11 @@ h2 {
 .job {
     display: flex;
     flex-direction: column;
+    width: 50%;
+}
+
+.thanks {
+    color: rgb(199, 0, 0);
 }
 
 /*------------- DOWNLOAD BUTTON -------------*/

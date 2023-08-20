@@ -11,7 +11,7 @@
         <header>
                 <h1>{{project_title}} Test Quote</h1>
                 <div class="admin-numbers">
-                        <p>Nº{{quote_id}}</p>
+                        <p class="quote-num">Nº{{quote_id}}</p>
                         <p id="current-date">Aug. 23, 2023</p>
                 </div>
         </header>
@@ -19,59 +19,81 @@
         <!-- Quote Items -->
         <section class="service-box">
                 <div class="service-sections">
-                        <div class="qty">
-                                <h3>Qty</h3>
-                                <div>
-                                        {{#each quote_items as |quote_item|}}
-                                        {{> quote_service_qty}}
-                                        {{/each}}
+                        <div class="service">
+                                <h2>Service</h2>
+                                <div class="quote-item">
+                                        <div>
+                                                <p>First Item{{service_name}}</p>
+                                        </div>
+                                        <div>
+                                                <p>Second Item{{service_name}}</p>
+                                        </div>
+                                        <div>
+                                                <p>Third Item{{service_name}}</p>
+                                        </div>
+                                        {{!-- {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_item}}
+                                        {{/each}} --}}
                                 </div>
                         </div>
-                        <div class="service">
-                                <h3>Service</h3>
-                                <div>
-                                        {{#each quote_items as |quote_item|}}
-                                        {{> quote_service_item}}
-                                        {{/each}}
+                        <div class="qty">
+                                <h2>Qty</h2>
+                                <div class="quote-item">
+                                        <div>
+                                                <p>1{{quantity}}</p>
+                                        </div>
+                                        <div>
+                                                <p>2{{quantity}}</p>
+                                        </div>
+                                        <div>
+                                                <p>3{{quantity}}</p>
+                                        </div>
+                                        {{!-- {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_qty}}
+                                        {{/each}} --}}
                                 </div>
                         </div>
                         <div class="price">
-                                <h3>Price</h3>
-                                <div>
-                                        {{#each quote_items as |quote_item|}}
+                                <h2>Price</h2>
+                                <div class="quote-item">
+                                        <div>
+                                                <p>100.00{{service_price}}</p>
+                                        </div>
+                                        <div>
+                                                <p>200.00{{service_price}}</p>
+                                        </div>
+                                        <div>
+                                                <p>300.00{{service_price}}</p>
+                                        </div>
+                                        {{!-- {{#each quote_items as |quote_item|}}
                                         {{> quote_service_price}}
-                                        {{/each}}
+                                        {{/each}} --}}
                                 </div>
                         </div>
                 </div>
-                <div>
+                <div class="total">
                         <h3>Total:</h3>
-                        <h3>{{totalPrice}}$200.00</h3>
+                        <p>{{totalPrice}}$200.00</p>
                 </div>
                 </div>
         </section>
 
         <!-- Notes -->
-        <section>
-                <h2>Notes:</h2>
+        <section class="notes">
                 <p>{{notes}}This is a note.</p>
         </section>
-        <div></div>
 
         <!-- Client Signature -->
-        <section>
-                <h2>Signature:</h2>
-                <div>
-                        <div>
-                                <h4>Name:</h4>
-                                <!-- Sign Line -->
-                                <div></div>
-                        </div>
-                        <div>
-                                <h4>Date:</h4>
-                                <!-- Date Line -->
-                                <div></div>
-                        </div>
+        <section class="signature">
+                <div class="sig-name">
+                        <!-- Sign Line -->
+                        <div class="sign-line"></div>
+                        <h4>Signature</h4>
+                </div>
+                <div class="sig-date">
+                        <!-- Date Line -->
+                        <div class="date-line"></div>
+                        <h4>Date</h4>
                 </div>
         </section>
 
@@ -79,11 +101,11 @@
                 <div class="split"></div>
         </div>
 
-        <section class="contact">
-                <div>
+        <section class="footing">
+                <div class="contact">
                         <!-- Client Info -->
                         <div class="client">
-                                <p>{{client_first}}First {{client_last}}Last
+                                <p><b>{{client_first}}First {{client_last}}Last</b>
                                         <br>
                                         {{client_address}}123 Main St {{client_address_2}}Ste 123
                                         <br>
@@ -92,7 +114,7 @@
                         </div>
                         <!-- Developer Info -->
                         <div class="developer">
-                                <p>{{userFirst}}First {{userLast}}Last
+                                <p><b>{{userFirst}}First {{userLast}}Last</b>
                                         <br>
                                         {{userEmail}}test@email.com
                                         <br>
@@ -104,7 +126,7 @@
                 <!-- Job Info -->
                 <div class="job">
                         <p class="due-date">Estimated Completion: {{project_due_date}}09/14/2023</p>
-                        <p class="thanks">Thank you!</p>
+                        <p class="thanks"><b>Thank you!</b></p>
                 </div>
         </section>
 
@@ -112,7 +134,6 @@
         <div class="btn-container">
                 <button id="download">Download</button>
         </div>
-
 </main>
 
 <!-- JS Link -->
