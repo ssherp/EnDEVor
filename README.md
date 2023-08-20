@@ -88,9 +88,9 @@
 
 ## Deployment
 
-Website URL: [enDEVors](site link)
+Website URL: [enDEVors](https://endevor-3d604fa0490c.herokuapp.com/)
 
-![alt text](./assets/images/)
+![alt text](./public/assets/endevors-home.png)
 
 <br>
 
@@ -132,7 +132,7 @@ _Currently a student in the UC Berkeley Full Stack Coding Bootcamp. Contact Belo
 ![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
 <br>
 
-[email](email)
+[ssherpa89@gmail.com](ssherpa89@gmail.com)
 <br>
 <br>
 
@@ -146,7 +146,7 @@ _Currently a student in the UC Berkeley Full Stack Coding Bootcamp. Contact Belo
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 <br>
 
-[https://github.com/](https://github.com/)
+[https://github.com/ssherp/](https://github.com/ssherp/)
 
 <br>
 

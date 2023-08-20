@@ -1,9 +1,5 @@
-//Require the pdfkit package
-const PDFDocument = require('pdfkit');
-
-
-
 //------------------------------ Query Selectors ------------------------------//
+
 //create variables for the user inputs
 //Project Query Selectors
 const projectTitle = document.querySelector('#project-title').value.trim().replace(' ', '-');
@@ -19,10 +15,6 @@ const clientAddress2 = document.querySelector('#inputAddress2').value.trim();
 const clientCity = document.querySelector('#inputCity').value.trim();
 const clientState = document.querySelector('#inputState').value.trim();
 const clientZip = document.querySelector('#inputZip').value.trim();
-
-//Client Contact Section
-const clientContactInfo = clientFirst + " " + clientLast + "\n" + clientEmail + "\n" + clientPhone;
-const clientAddressInfo = clientAddress + "\n" + clientAddress2 + "\n" + clientCity + ", " + clientState + " " + clientZip;
 
 //Service Query Selectors
 const itemQuantity = document.querySelector('#itemQuantity').value.trim();
@@ -46,15 +38,15 @@ const userContactInfo = userFirst + " " + userLast + "\n" + userEmail + "\n" + u
 //------------------------------ Event Listener Buttons ------------------------------//
 
 //Add & Create Buttons
-const addQuoteItemBtn = document.querySelector("#add-item");
-const createQuotePDFBtn = document.getElementById("#submit");
+// const addQuoteItemBtn = document.querySelector("#add-item");
+// const createQuotePDFBtn = document.getElementById("#submit");
 
 
 //Event Listener for adding a new quote item
-addQuoteItemBtn.addEventListener("click", addQuoteItem);
+// addQuoteItemBtn.addEventListener("click", addQuoteItem);
 
 //Event Listener for creating quote with user inputs
-createQuotePDFBtn.addEventListener("click", createQuotePDF);
+// createQuotePDFBtn.addEventListener("click", createQuotePDF);
 
 
 
@@ -88,33 +80,49 @@ document.addEventListener('DOMContentLoaded', () => {
 //------------------------------ Add Quote Item ------------------------------//
 
 //Write a function to add a new line item for each new service added to the quote items
-function addQuoteItem() {
-    //copy the select element
-    const firstItem = document.getElementById('serviceName'); //global
-    const newSelect = firstItem.cloneNode(true);
+// function addQuoteItem() {
+//     //copy the select element
+//     const firstItem = document.getElementById('serviceName'); //global
+//     const newSelect = firstItem.cloneNode(true);
 
-    //Make new selection value is cleared
-    newSelect.selectedIndex = 0;
+//     //Make new selection value is cleared
+//     newSelect.selectedIndex = 0;
 
-    //Append the new select element
-    const container = document.getElementById('service-item');
-    container.appendChild(newSelect);
+//     //Append the new select element
+//     const container = document.getElementById('service-item');
+//     container.appendChild(newSelect);
 
-    //Set info for new button
-    const addButton = document.createElement('button');
-    addButton.className = 'add-item';
-    addButton.type = 'button';
-    addButton.textContent = 'Add Item';
+//     //Set info for new button
+//     const addButton = document.createElement('button');
+//     addButton.className = 'add-item';
+//     addButton.type = 'button';
+//     addButton.textContent = 'Add Item';
 
-    //Add event listener for the new button to repeat the same steps
-    addButton.addEventListener('click', addQuoteItem);
+//     //Add event listener for the new button to repeat the same steps
+//     addButton.addEventListener('click', addQuoteItem);
 
-    //Replace the original Add Item button with the new one
-    const existingButton = document.querySelector('.add-item');
-    container.replaceChild(addButton, existingButton);
-};
+//     //Replace the original Add Item button with the new one
+//     const existingButton = document.querySelector('.add-item');
+//     container.replaceChild(addButton, existingButton);
+// };
+
+const itemsContainer = document.getElementById('service-items-container');
+const firstItem = document.getElementById('service-item')
+const addItemBtn = document.getElementById('add-item');
 
 
+
+function addQuoteItem(event) {
+    event.preventDefault();
+
+    console.log('Add item button is clicked');
+
+    const newItem = firstItem.cloneNode(true);
+    itemsContainer.appendChild(newItem);
+
+}
+
+addItemBtn.addEventListener('click', addQuoteItem);
 
 //------------------------------ Add Total Price ------------------------------//
 
@@ -257,19 +265,19 @@ function createQuotePDF() {
 const serviceNameSelect = document.getElementById('#serviceName');
 
 async function populateServiceDropdown() {
-  try {
-    const response = await fetch('/api/quote_items');
-    const quoteItems = await response.json();
+    try {
+        const response = await fetch('/api/quote_items');
+        const quoteItems = await response.json();
 
-    quoteItems.forEach((quoteItem) => {
-      const option = document.createElement('option');
-      option.value = quoteItem.service_id;
-      option.textContent = `Quantity: ${quoteItem.quantity}, Service ID: ${quoteItem.service_id}`;
-      serviceNameSelect.appendChild(option);
-    });
-  } catch (error) {
-    console.error(error);
-  }
+        quoteItems.forEach((quoteItem) => {
+            const option = document.createElement('option');
+            option.value = quoteItem.service_id;
+            option.textContent = `Quantity: ${quoteItem.quantity}, Service ID: ${quoteItem.service_id}`;
+            serviceNameSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 populateServiceDropdown();

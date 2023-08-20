@@ -1,0 +1,239 @@
+/*----- COLOR & FONTS -----*/
+:root {
+    --dark: #272822;
+    --light: #F8F8F3;
+    --blue: #0D859A;
+    --lightOrange: #F08C01;
+    --orange: #E8580C;
+    --red: #E23230;
+    --main: 'Press Start 2P', cursive;
+    --other: 'Source Code Pro', monospace;
+}
+
+/*-------------------- DEFAULT CSS --------------------*/
+/*------------- NAV -------------*/
+main {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 8%;
+}
+
+/*------------- HEADER -------------*/
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.admin-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    font-size: 14px;
+}
+
+.quote-num {
+    color: rgb(199, 0, 0);
+}
+
+/*------------- ORDER SECTION -------------*/
+.service-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 12px;
+    font-style: italic;
+    border-bottom: black solid 1px;
+}
+
+.service-sections {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+
+}
+
+.service {
+    width: 80%;
+}
+
+.qty {
+    width: 10%;
+}
+
+.price {
+    width: 10%;
+}
+
+.quote-item {
+    font-size: 12px;
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    text-align: right;
+    width: 60%;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 12px;
+    font-weight: bolder;
+    width: 20%;
+    text-align: left;
+}
+
+.total p {
+    font-size: 12px;
+    width: 20%;
+    text-align: left;
+}
+
+/*------------- NOTES -------------*/
+
+.notes {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.notes p {
+    font-size: 12px;
+    width: 60%;
+}
+
+/*------------- SIGNATURE -------------*/
+
+.signature {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 10px 20px 10px ;
+}
+
+h4 {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.sig-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.sign-line {
+    outline: black solid 1px;
+    width: 100%;
+}
+
+.sig-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.date-line {
+    outline: black solid 1px;
+    width: 100%;
+}
+
+/*------------- SPLIT -------------*/
+
+.split-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.split {
+    outline: black solid 2px;
+    width: 100%;
+}
+
+/*------------- CONTACT SECTION -------------*/
+
+.footing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 12px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    width: 50%;
+    text-align: left;
+}
+
+.client {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+}
+
+.developer {
+    display: flex;
+    flex-direction: column;
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.thanks {
+    color: rgb(199, 0, 0);
+}
+
+/*------------- DOWNLOAD BUTTON -------------*/
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container button {
+    background-color: var(--dark);
+    color: var(--red);
+    border: var(--red) solid 3px;
+    padding: 10px;
+    font-family: var(--main);
+    margin-top: 15px;
+}
+
+@media print {
+    #download {
+        display: none;
+    }
+}

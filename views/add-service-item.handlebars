@@ -1,0 +1,45 @@
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- CSS Link -->
+<link rel="stylesheet" href="/css/add-service-item.css">
+<main>
+     <!-- Nav Bar -->
+     <nav class="main-nav">
+          <ul>
+               <li>enDEVors</li>
+               <li><a href="/homepage">home</a></li>
+               <li><a href="/profile">profile</a></li>
+               <li><a href="/services">services</a></li>
+               <li><a href="/quote_form">quotes</a></li>
+          </ul>
+     </nav>
+     <!-- Service Item Form -->
+     <h1>Add Service</h1>
+     <div class="glass-bg">
+               <form id="add-service-item">
+                    <!-- Service Name -->
+                    <div class="name">
+                         <h2>Service Name:</h2>
+                         <input type="text" id="name-input" required>
+                    </div>
+                    <!-- Description -->
+                    <div class="description">
+                         <h2>Description:</h2>
+                         <textarea id="description-input" style="height: 100px" required></textarea>
+                    </div>
+                    <!-- Price -->
+                    <div class="price">
+                         <h2>Price:</h2>
+                         <input type="number" id="price-input" required>
+                    </div>
+                    <div class="btn-container">
+                         <button id="add-item" type="submit">Add</button>
+                    </div>
+               </form>
+     </div>
+</main>
+
+<!-- JS Link -->
+<script src="/js/add-service-item.js"></script>

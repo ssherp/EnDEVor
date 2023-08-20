@@ -1,0 +1,154 @@
+/*----- COLOR & FONTS -----*/
+:root {
+    --dark: #272822;
+    --light: #F8F8F3;
+    --blue: #0D859A;
+    --lightOrange: #F08C01;
+    --orange: #E8580C;
+    --red: #E23230;
+    --main: 'Press Start 2P', cursive;
+    --other: 'Source Code Pro', monospace;
+}
+
+/*-------------------- DEFAULT CSS --------------------*/
+/*------------- NAV -------------*/
+.main-nav {
+    position: fixed;
+    top: 0;
+    background-color: var(--dark);
+    border-bottom: var(--blue) solid 3px;
+    width: 100%;
+    z-index: 30;
+    font-family: var(--main);
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    list-style: none;
+    font-family: var(--extra);
+    font-size: 15px;
+}
+
+.main-nav li {
+    color: var(--light);
+}
+
+.main-nav li a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/*----- MAIN -----*/
+main {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/*----- GLASS BACKGROUND -----*/
+.glass-bg {
+    background: rgba(255, 255, 255, 0.171);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--blue) solid 3px;
+    width: 75%;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .glass-bg {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/*----- HEADER -----*/
+h1 {
+    font-family: var(--main);
+    color: var(--blue);
+    font-size: 60px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/*----- SERVICES -----*/
+.card-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    overflow-x: auto;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--red) solid 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+article a {
+    text-decoration: none;
+    width: 100%;
+}
+
+article header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+article header p {
+    font-weight: bolder;
+    color: var(--blue);
+    font-family: var(--main);
+    font-size: 20px;
+}
+
+article div {
+    font-family: var(--main);
+    color: var(--light);
+    width: 60%;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+h2 {
+    color: var(--orange);
+    text-align: left;
+    font-family: var(--main);
+    font-size: 20px;
+}
+
+/*----- ADD BUTTON -----*/
+#add-item {
+    background-color: var(--dark);
+    color: var(--red);
+    border: var(--red) solid 3px;
+    padding: 10px;
+    font-family: var(--main);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

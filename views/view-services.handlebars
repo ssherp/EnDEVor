@@ -1,0 +1,34 @@
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- CSS Link -->
+<link rel="stylesheet" href="/css/view-services.css">
+<main>
+    <!-- Nav Bar -->
+    <nav class="main-nav">
+        <ul>
+            <li>enDEVors</li>
+            <li><a href="/homepage">home</a></li>
+            <li><a href="/profile">profile</a></li>
+            <li><a href="/services">services</a></li>
+            <li><a href="/quote_form">quotes</a></li>
+        </ul>
+    </nav>
+    <!-- Order Info -->
+    <h1>Services</h1>
+    <div class="glass-bg">
+            <div class="card-layout">
+                {{#each services as |service|}}
+                {{> view-service-items}}
+                {{/each}}
+            </div>
+        <div class="order">
+            <button id="add-item" type="submit">Add Service</button>
+        </div>
+
+    </div>
+</main>
+
+<!-- JS Link -->
+<script src="/js/view-services.js"></script>

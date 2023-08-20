@@ -87,7 +87,7 @@ Quote.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Quote',
+    modelName: 'quote',
   }
 );
 

@@ -1,0 +1,140 @@
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- CSS Link -->
+<link rel="stylesheet" href="/css/quote-file.css">
+
+<!-- Main Body -->
+<main>
+        <!-- Developer Info -->
+        <header>
+                <h1>{{project_title}} Test Quote</h1>
+                <div class="admin-numbers">
+                        <p class="quote-num">Nº{{quote_id}}</p>
+                        <p id="current-date">Aug. 23, 2023</p>
+                </div>
+        </header>
+
+        <!-- Quote Items -->
+        <section class="service-box">
+                <div class="service-sections">
+                        <div class="service">
+                                <h2>Service</h2>
+                                <div class="quote-item">
+                                        <div>
+                                                <p>First Item{{service_name}}</p>
+                                        </div>
+                                        <div>
+                                                <p>Second Item{{service_name}}</p>
+                                        </div>
+                                        <div>
+                                                <p>Third Item{{service_name}}</p>
+                                        </div>
+                                        {{!-- {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_item}}
+                                        {{/each}} --}}
+                                </div>
+                        </div>
+                        <div class="qty">
+                                <h2>Qty</h2>
+                                <div class="quote-item">
+                                        <div>
+                                                <p>1{{quantity}}</p>
+                                        </div>
+                                        <div>
+                                                <p>2{{quantity}}</p>
+                                        </div>
+                                        <div>
+                                                <p>3{{quantity}}</p>
+                                        </div>
+                                        {{!-- {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_qty}}
+                                        {{/each}} --}}
+                                </div>
+                        </div>
+                        <div class="price">
+                                <h2>Price</h2>
+                                <div class="quote-item">
+                                        <div>
+                                                <p>100.00{{service_price}}</p>
+                                        </div>
+                                        <div>
+                                                <p>200.00{{service_price}}</p>
+                                        </div>
+                                        <div>
+                                                <p>300.00{{service_price}}</p>
+                                        </div>
+                                        {{!-- {{#each quote_items as |quote_item|}}
+                                        {{> quote_service_price}}
+                                        {{/each}} --}}
+                                </div>
+                        </div>
+                </div>
+                <div class="total">
+                        <h3>Total:</h3>
+                        <p>{{totalPrice}}$200.00</p>
+                </div>
+                </div>
+        </section>
+
+        <!-- Notes -->
+        <section class="notes">
+                <p>{{notes}}This is a note.</p>
+        </section>
+
+        <!-- Client Signature -->
+        <section class="signature">
+                <div class="sig-name">
+                        <!-- Sign Line -->
+                        <div class="sign-line"></div>
+                        <h4>Signature</h4>
+                </div>
+                <div class="sig-date">
+                        <!-- Date Line -->
+                        <div class="date-line"></div>
+                        <h4>Date</h4>
+                </div>
+        </section>
+
+        <div class="split-container">
+                <div class="split"></div>
+        </div>
+
+        <section class="footing">
+                <div class="contact">
+                        <!-- Client Info -->
+                        <div class="client">
+                                <p><b>{{client_first}}First {{client_last}}Last</b>
+                                        <br>
+                                        {{client_address}}123 Main St {{client_address_2}}Ste 123
+                                        <br>
+                                        {{client_city}}Main, {{client_state}}CA {{client_zip}}12345
+                                </p>
+                        </div>
+                        <!-- Developer Info -->
+                        <div class="developer">
+                                <p><b>{{userFirst}}First {{userLast}}Last</b>
+                                        <br>
+                                        {{userEmail}}test@email.com
+                                        <br>
+                                        {{userPhone}}1234567890
+                                </p>
+                        </div>
+                </div>
+
+                <!-- Job Info -->
+                <div class="job">
+                        <p class="due-date">Estimated Completion: {{project_due_date}}09/14/2023</p>
+                        <p class="thanks"><b>Thank you!</b></p>
+                </div>
+        </section>
+
+        <!-- Download -->
+        <div class="btn-container">
+                <button id="download">Download</button>
+        </div>
+</main>
+
+<!-- JS Link -->
+<script src="/js/quote-file.js"></script>

@@ -1,6 +1,19 @@
+//-------------------- Requires --------------------//
+
+//Express Package
 const router = require('express').Router();
+
+
+//USER Model
 const { User } = require('../../models');
 
+
+
+
+
+//-------------------- CRUD --------------------//
+
+//Create a new User
 router.post('/', async (req, res) => {
   console.log(req)
   try {
@@ -23,6 +36,8 @@ router.post('/', async (req, res) => {
 });
 
 
+
+//Get a User
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -56,7 +71,8 @@ router.post('/login', async (req, res) => {
 });
 
 
-// Update profile route
+
+// Update a User
 router.put('/profile', async (req, res) => {
   console.log("your hit the route")
   try {
@@ -95,6 +111,7 @@ router.put('/profile', async (req, res) => {
 
 
 
+//End a user session
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -109,4 +126,5 @@ router.post('/logout', (req, res) => {
 
 
 
+//-------------------- Export User CRUD Routes --------------------//
 module.exports = router;

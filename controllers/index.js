@@ -1,22 +1,42 @@
+//-------------------- Requires --------------------//
+
+//Express Package
 const router = require('express').Router();
 
+
+//File Path Files
 const apiRoutes = require('./api/index');
 const homeRoutes = require('./homeRoutes');
 const serviceRoutes = require('./serviceRoutes');
-const editServiceRoutes = require('./editServiceRoutes');
 const quoteFormRoutes = require('./quoteFormRoutes');
 const quoteFileRoutes = require('./quoteFileRoutes');
  
-//Not sure if different files are necessary
+
+
+
+
+//-------------------- File Paths: Part I --------------------//
+
+//CRUD Routes
 router.use('/api', apiRoutes);
+
+
+//Render Routes
 router.use('/', homeRoutes);
-// services routes
+
+
+// Services Routes
 router.use('/services', serviceRoutes);
-router.use('/services/edit', editServiceRoutes);
-// profile route -> when does user fill this out?
-// quote routes
+
+
+//Create Quote Routes
 router.use('/quote_form', quoteFormRoutes);
+
+
+//View and Download Quote Routes
 router.use('/quote_file', quoteFileRoutes);
 
 
+
+//-------------------- Export Routes --------------------//
 module.exports = router;

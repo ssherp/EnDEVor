@@ -35,7 +35,11 @@ Service.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+<<<<<<< HEAD:models/Service.js
     modelName: 'Service',
+=======
+    modelName: 'service',
+>>>>>>> main:models/Services.js
   }
 );
 

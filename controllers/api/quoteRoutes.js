@@ -1,8 +1,19 @@
+//-------------------- Requires --------------------//
+
+//Express Package
 const router = require('express').Router();
+
+
+//Quote & Quote Item Model
 const { Quote, Quote_Item } = require('../../models');
 
 
-// CREATE a quote
+
+
+
+//-------------------- CRUD & File Paths --------------------//
+
+//Create a new quote
 router.post('/', async (req, res) => {
     try {
         const quoteData = await Quote.create(req.body);
@@ -17,7 +28,9 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET all quotes
+
+
+//Get all quotes
 router.get('/', async (req, res) => {
     try {   
         const quoteData = await Quote.findAll({
@@ -32,7 +45,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-// // GET a quote
+
+
+//Get a single quote
 router.get('/:id', async (req, res) => {
     try {
     const quoteId = req.params.id;
@@ -48,7 +63,8 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// DELETE a quote
+
+//Delete a quote
 router.delete('/:id', async (req, res) => {
     try {
         const quoteData = await Quote.destroy({
@@ -63,5 +79,11 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
+
+
+
+//-------------------- Export Quote CRUD Routes --------------------//
 
 module.exports = router;

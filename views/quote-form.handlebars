@@ -23,11 +23,14 @@
     </header>
     <!-- "Glass" Background -->
     <section class="glass-bg">
+
         <!-- Quote Form -->
         <form id="create-quote-form">
-            <!-- Project -->
+
+
+            <!-- Project Info -->
             <h2>Project</h2>
-            <div class="project-info">
+            <section class="project-info">
                 <!-- Project Title -->
                 <div class="title">
                     <label for="project-title" class="form-label">Title</label>
@@ -38,7 +41,9 @@
                     <label for="project-due-date" class="form-label">Est. Completion</label>
                     <input type="date" class="form-control" placeholder="mm/dd/yyyy" id="project-due-date">
                 </div>
-            </div>
+            </section>
+
+
             <!-- Developer Info -->
             <h2>Developer</h2>
             <section class="dev-info">
@@ -67,6 +72,8 @@
                     </div>
                 </div>
             </section>
+
+
             <!-- Client Info -->
             <h2>Client Info</h2>
             <section class="client-info">
@@ -178,14 +185,28 @@
                     </div>
                 </div>
             </section>
+
+
             <!-- Order Info -->
             <h2>Order Info</h2>
-
-            <div id="service-item">
-                <div class="item-qty">
-                    <label for="itemQuantity">Qty:</label>
-                    <input type="number" class="form-control" id="itemQuantity" value="1" required>
+            <section id="service-items-container">
+                <div id="service-item">
+                    <div class="item-qty">
+                        <label for="itemQuantity">Qty:</label>
+                        <input type="number" class="form-control" id="itemQuantity" value="1" required>
+                    </div>
+                    <div class="item-type">
+                        <label for="serviceName">Service:</label>
+                        <select class="form-select" aria-label="Choose a service" id="serviceName">
+                            <!-- ADD A PARTIAL FOR EACH OPTION -->
+                            {{#each services as |service|}}
+                            {{> service-options}}
+                            {{/each}}
+                            <option selected>Choose a service</option>
+                        </select>
+                    </div>
                 </div>
+<<<<<<< HEAD
                 <div class="item-type">
                     <label for="serviceName">Service:</label>
                     <select class="form-select" aria-label="Choose a service" id="serviceName">
@@ -195,17 +216,35 @@
             </div>
             <section class="order">
                 <button id="add-item" type="submit">Add Item</button>
+=======
+>>>>>>> main
             </section>
+            <section class="order">
+                <button id="add-item" type="click">Add Item</button>
+            </section>
+
+
+            {{!-- <!-- Customization -->
+            <h2>Customization</h2>
+            <section class="color">
+                <label for="colorPicker">Choose a color:</label>
+                <input type="color" id="colorPicker" name="colorPicker" value="#E23230">
+            </section> --}}
+
+
             <!-- Notes -->
             <h2>Notes</h2>
-            <div class="form-floating">
+            <section class="form-floating">
                 <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Notes</label>
-            </div>
+            </section>
+
+
             <!-- Submit Button -->
             <div class="pdf-submit">
                 <button id="submit" type="submit">Create</button>
             </div>
+
         </form>
     </section>
 </main>
