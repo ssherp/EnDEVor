@@ -11,11 +11,6 @@ const quoteRoutes= require ('./quoteRoutes')
 const quoteItemRoutes= require ('./quoteItemRoutes')
 
 
-<<<<<<< HEAD
-router.use('/users', userRoutes);
-router.use('/services',serviceRoutesApi);
-router.use('/quotes',quoteRoutes);
-=======
 
 
 
@@ -30,7 +25,6 @@ router.use('/services',serviceRoutes);
 
 
 //Quote Items
->>>>>>> main
 router.use('/quote_items',quoteItemRoutes);
 
 
@@ -39,10 +33,7 @@ router.use('/quotes',quoteRoutes);
 
 
 
-<<<<<<< HEAD
-=======
 
 
 //-------------------- Export Routes --------------------//
->>>>>>> main
 module.exports = router;
