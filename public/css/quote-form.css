@@ -209,11 +209,14 @@ h2 {
     align-items: center;
 }
 
-.service-id {
-    display: none;
+.serviceId {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.service-price {
+.subtotal {
     display: none;
 }
 

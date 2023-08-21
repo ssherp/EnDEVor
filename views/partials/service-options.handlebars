@@ -1,3 +1,5 @@
-<option value="{{id}}" selected>{{service_name}}</option>
-{{!-- <div class="service-id">{{service.id}}</div>
-<div class="service-price">{{service.price}}</div> --}}
+<option class="get-subtotal" id="serviceId" value="{{id}}" selected>
+    {{!-- <div id="id-num">{{id}}</div> --}}
+    <div id="id-name">{{service_name}}</div>
+    <div>- $<div class="id-price" id="id-price">{{service_price}}</div>.00</div>
+</option>

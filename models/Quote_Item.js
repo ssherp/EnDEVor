@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Quote_Item extends Model {}
+class Quote_Item extends Model { }
 
 Quote_Item.init(
   {
@@ -11,16 +11,17 @@ Quote_Item.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    quantity : {
+    quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    service_id: {
+    item_name: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'service',
-        key: 'id',
-      },
+      allowNull: false,
+    },
+    subtotal: {
+      type: DataTypes.FLOAT(10, 2),
+      allowNull: false,
     },
     quote_id: {
       type: DataTypes.INTEGER,
@@ -39,6 +40,6 @@ Quote_Item.init(
     modelName: 'quote_item',
   }
 
-  );
+);
 
-  module.exports = Quote_Item;
+module.exports = Quote_Item;

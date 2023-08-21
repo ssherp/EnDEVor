@@ -21,19 +21,19 @@ Quote.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userFirst: {
+    user_first: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userLast: {
+    user_last: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userEmail: {
+    user_email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userPhone: {
+    user_phone: {
       type: DataTypes.STRING,
       allowNull: true,
     }, 
@@ -74,8 +74,15 @@ Quote.init(
       allowNull: true,
     },
     total_price: {
-      type: DataTypes.FLOAT,
-      allowNull: true,
+      type: DataTypes.FLOAT(10,2),
+      allowNull: false,
+    },
+    quote_item_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'quote_item',
+        key: 'id',
+      },
     },
     notes: {
       type: DataTypes.STRING,
