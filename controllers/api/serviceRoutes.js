@@ -63,7 +63,6 @@ router.get('/:id', async (req, res) => {
 			res.status(404).json({ message: 'No service found with this ID' });
 			return;
 		}
-		res.render('addService', { service })
 		res.status(200).json(servicesData);
 	} catch (err) {
 		res.status(500).json(err)

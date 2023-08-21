@@ -98,7 +98,7 @@
                     <!-- Phone Number -->
                     <div>
                         <label for="formGroupExampleInput" class="form-label">Phone Number</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput">
+                        <input type="number" class="form-control" id="client-phone">
                     </div>
                 </div>
                 <div class="client-address">
@@ -193,7 +193,7 @@
                 <div id="service-item">
                     <div class="item-qty">
                         <label for="itemQuantity">Qty:</label>
-                        <input type="number" class="form-control" id="itemQuantity" value="1" required>
+                        <input type="number" class="qty" id="itemQuantity" value="1" required>
                     </div>
                     <div class="item-type">
                         <label for="serviceName">Service:</label>
@@ -204,6 +204,7 @@
                             {{/each}}
                             <option selected>Choose a service</option>
                         </select>
+                        <div class="total-item-price" id="subtotal"></div>
                     </div>
                 </div>
             </section>
@@ -223,7 +224,7 @@
             <!-- Notes -->
             <h2>Notes</h2>
             <section class="form-floating">
-                <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea class="form-control" id="notes" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Notes</label>
             </section>
 
