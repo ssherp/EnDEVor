@@ -11,7 +11,7 @@ Quote.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: false,
+      autoIncrement: true,
     },
     project_title: {
       type: DataTypes.STRING,
