@@ -53,7 +53,7 @@ addItemBtn.addEventListener('click', addQuoteItem);
 
 
 
-//------------------------------ Create the Quote POST ------------------------------//
+//------------------------------ Query Selectors ------------------------------//
 
 //Project Query Selectors
 const project_title = document.querySelector('#project-title').value.trim().replace(' ', '-');
@@ -82,7 +82,7 @@ const client_zip = document.querySelector('#inputZip').value.trim();
 //Service Query Selectors
 const quantity = document.querySelector('#itemQuantity').value.trim();
 const service_id = document.querySelector('#serviceId').value;
-const service_name = document.querySelector('#id-name').value;
+const item_name = document.querySelector('#id-name').value;
 const service_price = document.querySelector('#id-price').value;
 const subtotal = document.querySelector('#subtotal').value;
 const notes = document.querySelector('#notes').value.trim();
