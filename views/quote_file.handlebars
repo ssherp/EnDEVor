@@ -9,10 +9,10 @@
 <main>
         <!-- Developer Info -->
         <header>
-                <h1>{{project_title}} Test Quote</h1>
+                <h1>{{project_title}}</h1>
                 <div class="admin-numbers">
                         <p class="quote-num">Nº{{quote_id}}</p>
-                        <p id="current-date">Aug. 23, 2023</p>
+                        <p id="current-date"></p>
                 </div>
         </header>
 
@@ -22,65 +22,37 @@
                         <div class="service">
                                 <h2>Service</h2>
                                 <div class="quote-item">
-                                        <div>
-                                                <p>First Item{{service_name}}</p>
-                                        </div>
-                                        <div>
-                                                <p>Second Item{{service_name}}</p>
-                                        </div>
-                                        <div>
-                                                <p>Third Item{{service_name}}</p>
-                                        </div>
-                                        {{!-- {{#each quote_items as |quote_item|}}
-                                        {{> quote_service_item}}
-                                        {{/each}} --}}
+                                        {{#each quote_items as |quote_item|}}
+                                        {{> quote_item_name}}
+                                        {{/each}}
                                 </div>
                         </div>
                         <div class="qty">
                                 <h2>Qty</h2>
                                 <div class="quote-item">
-                                        <div>
-                                                <p>1{{quantity}}</p>
-                                        </div>
-                                        <div>
-                                                <p>2{{quantity}}</p>
-                                        </div>
-                                        <div>
-                                                <p>3{{quantity}}</p>
-                                        </div>
-                                        {{!-- {{#each quote_items as |quote_item|}}
-                                        {{> quote_service_qty}}
-                                        {{/each}} --}}
+                                        {{#each quote_items as |quote_item|}}
+                                        {{> quote_item_qty}}
+                                        {{/each}}
                                 </div>
                         </div>
                         <div class="price">
                                 <h2>Price</h2>
                                 <div class="quote-item">
-                                        <div>
-                                                <p>100.00{{service_price}}</p>
-                                        </div>
-                                        <div>
-                                                <p>200.00{{service_price}}</p>
-                                        </div>
-                                        <div>
-                                                <p>300.00{{service_price}}</p>
-                                        </div>
-                                        {{!-- {{#each quote_items as |quote_item|}}
-                                        {{> quote_service_price}}
-                                        {{/each}} --}}
+                                        {{#each quote_items as |quote_item|}}
+                                        {{> quote_item_subtotal}}
+                                        {{/each}}
                                 </div>
                         </div>
                 </div>
                 <div class="total">
                         <h3>Total:</h3>
-                        <p>{{totalPrice}}$200.00</p>
-                </div>
+                        <p>{{totalPrice}}</p>
                 </div>
         </section>
 
         <!-- Notes -->
         <section class="notes">
-                <p>{{notes}}This is a note.</p>
+                <p>{{notes}}</p>
         </section>
 
         <!-- Client Signature -->
@@ -105,27 +77,27 @@
                 <div class="contact">
                         <!-- Client Info -->
                         <div class="client">
-                                <p><b>{{client_first}}First {{client_last}}Last</b>
+                                <p><b>{{client_first}} {{client_last}}</b>
                                         <br>
-                                        {{client_address}}123 Main St {{client_address_2}}Ste 123
+                                        {{client_address}} {{client_address_2}}
                                         <br>
-                                        {{client_city}}Main, {{client_state}}CA {{client_zip}}12345
+                                        {{client_city}} {{client_state}} {{client_zip}}
                                 </p>
                         </div>
                         <!-- Developer Info -->
                         <div class="developer">
-                                <p><b>{{userFirst}}First {{userLast}}Last</b>
+                                <p><b>{{userFirst}} {{userLast}}</b>
                                         <br>
-                                        {{userEmail}}test@email.com
+                                        {{userEmail}}
                                         <br>
-                                        {{userPhone}}1234567890
+                                        {{userPhone}}
                                 </p>
                         </div>
                 </div>
 
                 <!-- Job Info -->
                 <div class="job">
-                        <p class="due-date">Estimated Completion: {{project_due_date}}09/14/2023</p>
+                        <p class="due-date">Estimated Completion: {{project_due_date}}</p>
                         <p class="thanks"><b>Thank you!</b></p>
                 </div>
         </section>
