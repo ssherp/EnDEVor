@@ -73,16 +73,14 @@ Quote.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    quote_items: {
+      type: DataTypes.JSON,
+      allowNull: false,
+      defaultValue: [],
+    },
     total_price: {
       type: DataTypes.FLOAT(10,2),
       allowNull: false,
-    },
-    quote_item_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'quote_item',
-        key: 'id',
-      },
     },
     notes: {
       type: DataTypes.STRING,

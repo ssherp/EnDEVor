@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 
 //Quote & Quote Item Model
-const { Quote, Quote_Item } = require('../../models');
+const { Quote } = require('../../models');
 
 
 
@@ -13,20 +13,55 @@ const { Quote, Quote_Item } = require('../../models');
 
 //-------------------- CRUD & File Paths --------------------//
 
-//Create a new quote
-router.post('/', async (req, res) => {
+//Create a Quote with multiple Quote Items
+router.post('/quotes', async (req, res) => {
     try {
-        const quoteData = await Quote.create(req.body);
-        //do we need to add quote_items to model?
-        for (const quoteItem of req.body.quote_items) {
-            await Quote_Item.create(quoteItem)
-        }
-        // res.send('Quote PDF generated successfully');
-        res.status(200).json(quoteData);
-    } catch (err) {
-        res.status(500).json(err);
+      const {
+        project_title,
+        project_due_date,
+        user_first,
+        user_last,
+        user_email,
+        user_phone,
+        client_first,
+        client_last,
+        client_email,
+        client_phone,
+        client_address,
+        client_address_2,
+        client_city,
+        client_state,
+        client_zip,
+        quote_items,
+        total_price,
+        notes
+      } = req.body;
+  
+      const newQuote = await Quote.create({
+        project_title,
+        project_due_date,
+        user_first,
+        user_last,
+        user_email,
+        user_phone,
+        client_first,
+        client_last,
+        client_email,
+        client_phone,
+        client_address,
+        client_address_2,
+        client_city,
+        client_state,
+        client_zip,
+        quote_items,
+        total_price,
+        notes
+      });
+      res.status(201).json(newQuote);
+    } catch (error) {
+      res.status(500).json({ error: 'Error creating quote' });
     }
-});
+  });
 
 
 
