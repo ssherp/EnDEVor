@@ -118,6 +118,9 @@ subtotalElements.forEach((subtotalElement) => {
 
 });
 
+//Calculate Quote Total Price
+const total_price = subtotals.reduce((total, subtotal) => total + subtotal, 0);
+
 
 
 

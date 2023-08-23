@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Service, Quote_Item } = require('../models')
+const { Service } = require('../models')
 
 //Get ALL Services
 router.get('/', withAuth, async (req, res) => {

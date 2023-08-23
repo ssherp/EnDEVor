@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 
 //Service & User Model
-const { Service , User } = require('../../models');
+const { Service } = require('../../models');
 
 
 //Helper

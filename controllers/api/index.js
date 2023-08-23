@@ -8,7 +8,7 @@ const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 const serviceRoutes = require('./serviceRoutes');
 const quoteRoutes= require ('./quoteRoutes')
-const quoteItemRoutes= require ('./quoteItemRoutes')
+// const quoteItemRoutes= require ('./quoteItemRoutes')
 
 
 
@@ -24,12 +24,12 @@ router.use('/users', userRoutes);
 router.use('/services',serviceRoutes);
 
 
-//Quote Items
-router.use('/quote_items',quoteItemRoutes);
-
-
 //Quotes
 router.use('/quotes',quoteRoutes);
+
+
+//Quote Items
+// router.use('/quote_items',quoteItemRoutes);
 
 
 

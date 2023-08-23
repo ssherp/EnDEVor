@@ -68,9 +68,7 @@ router.post('/quotes', async (req, res) => {
 //Get all quotes
 router.get('/', async (req, res) => {
     try {   
-        const quoteData = await Quote.findAll({
-            include: [{model : Quote_Item}]
-        });
+        const quoteData = await Quote.findAll();
         console.log(quoteData);
         const quotes = quoteData.map((quote) => quote.get({ plain: true }));
         console.log("quotes", quotes);
@@ -85,8 +83,8 @@ router.get('/', async (req, res) => {
 //Get a single quote
 router.get('/:id', async (req, res) => {
     try {
-    const quoteId = req.params.id;
-    const quoteData = await quoteId.findByPk(quoteId);
+    const quote_id = req.params.id;
+    const quoteData = await Quote.findByPk(quote_id);
 
         if (!quoteData) {
              res.status(404).json({ message: 'Quote not found!' });
